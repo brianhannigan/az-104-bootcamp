@@ -1,0 +1,10 @@
+# OS
+Thumbs.db
+Desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# PowerShell logs
+*.log
