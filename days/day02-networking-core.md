@@ -45,6 +45,8 @@ It shows up in:
 
 ## ⏲️ Day Timer
 
+[▶ Open running timers for this day](../assets/running-timers.html?day=day02)
+
 | Timer | Target |
 |---|---|
 | Total Day Timer | 8h 00m |
