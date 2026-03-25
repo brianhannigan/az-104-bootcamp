@@ -23,6 +23,14 @@ You are:
 - Use cheat sheet
 - Perform final readiness check
 
+
+
+## 📚 Microsoft Learn Links (Use with Each Section)
+
+- Azure Administrator certification page: https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/
+- AZ-104 exam study guide: https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104
+- Certification exam day tips: https://learn.microsoft.com/en-us/credentials/support/exam-day-tips/
+
 ---
 
 # ⏱️ Time Plan

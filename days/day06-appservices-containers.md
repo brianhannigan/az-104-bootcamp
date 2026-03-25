@@ -25,6 +25,14 @@ AZ-104 tests:
 - Learn container options (ACI / AKS awareness / Web App for Containers)
 - Connect app hosting decisions to exam scenarios
 
+
+
+## 📚 Microsoft Learn Links (Use with Each Section)
+
+- Explore Azure App Service module: https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-app-service/
+- Deploy a website to Azure with Azure App Service module: https://learn.microsoft.com/en-us/training/modules/deploy-run-container-app-service/
+- Run containerized applications in Azure Container Instances module: https://learn.microsoft.com/en-us/training/modules/run-docker-with-azure-container-instances/
+
 ---
 
 # ⏱️ Time Plan
