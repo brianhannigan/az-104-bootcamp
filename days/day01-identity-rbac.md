@@ -30,6 +30,14 @@ You already have:
 
 ---
 
+
+## 📚 Microsoft Learn Links (Use with Each Section)
+
+- Identity + Governance learning path (AZ-104 aligned): https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance-administer-azure/
+- Azure RBAC module (hands-on): https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/
+- Azure Policy module: https://learn.microsoft.com/en-us/training/modules/intro-to-azure-policy/
+
+---
 # ⏱️ Time Plan
 
 | Block | Time |
@@ -43,6 +51,9 @@ You already have:
 # 🔹 STEP 1 – TEACH (Exam-Focused)
 
 ## 🧩 Azure Hierarchy
+
+📘 Microsoft Learn: https://learn.microsoft.com/en-us/azure/governance/management-groups/overview
+
 
 Management Group  
 ↓  
@@ -59,6 +70,9 @@ Resource
 
 ## 🔐 RBAC (Role-Based Access Control)
 
+📘 Microsoft Learn: https://learn.microsoft.com/en-us/azure/role-based-access-control/overview
+
+
 ### 🔥 MOST TESTED
 RBAC = **Who can do what, where**
 
@@ -72,6 +86,9 @@ RBAC = **Who can do what, where**
 
 ## 🔑 Built-in Roles
 
+📘 Microsoft Learn: https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
+
+
 | Role | Can Do | Cannot Do |
 |------|--------|----------|
 | Reader | View | No changes |
@@ -82,6 +99,9 @@ RBAC = **Who can do what, where**
 ---
 
 ## ⚠️ RBAC Rules
+
+📘 Microsoft Learn (scope/inheritance): https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview
+
 
 - Permissions are **additive**
 - Higher scope → inherits downward
@@ -101,6 +121,9 @@ User has:
 
 ## 🛑 Locks
 
+📘 Microsoft Learn: https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources
+
+
 | Lock | Effect |
 |------|-------|
 | CanNotDelete | Cannot delete |
@@ -111,6 +134,9 @@ User has:
 ---
 
 ## 📜 Azure Policy
+
+📘 Microsoft Learn: https://learn.microsoft.com/en-us/training/modules/intro-to-azure-policy/
+
 
 | Feature | Purpose |
 |--------|--------|
@@ -125,6 +151,9 @@ Examples:
 
 ## 🏷️ Tags
 
+📘 Microsoft Learn: https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources
+
+
 Used for:
 - Cost tracking
 - Organization
@@ -135,12 +164,18 @@ Used for:
 
 ## 🏢 Management Groups
 
+📘 Microsoft Learn: https://learn.microsoft.com/en-us/azure/governance/management-groups/overview
+
+
 Use when:
 - Applying rules across multiple subscriptions
 
 ---
 
 ## 💰 Cost Basics
+
+📘 Microsoft Learn: https://learn.microsoft.com/en-us/azure/cost-management-billing/cost-management-billing-overview
+
 
 Know:
 - Budgets
@@ -153,6 +188,9 @@ Know:
 
 ## Azure AD Join Types
 
+📘 Microsoft Learn: https://learn.microsoft.com/en-us/entra/identity/devices/overview
+
+
 | Type | Description |
 |------|------------|
 | Azure AD Join | Cloud-only devices |
@@ -163,6 +201,9 @@ Know:
 
 ## SSPR
 
+📘 Microsoft Learn: https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr
+
+
 - Allows users to reset password without admin
 - Requires authentication methods configured
 
@@ -170,12 +211,21 @@ Know:
 
 ## Guest Users
 
+📘 Microsoft Learn: https://learn.microsoft.com/en-us/entra/external-id/what-is-b2b
+
+
 - External users (B2B)
 - Limited access
 
 # 🔹 STEP 2 – HANDS-ON LAB
 
 ## 🎯 Scenario
+
+📘 Microsoft Learn lab support:
+- Create and manage resource groups: https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal
+- Assign Azure roles: https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal
+- Create policy assignments: https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal
+
 
 You must:
 - Create RG
