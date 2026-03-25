@@ -198,6 +198,43 @@ User has:
 👉 Result: **Contributor wins at RG**
 
 ---
+# RBAC ACTIONS vs NOTACTIONS (CRITICAL)
+
+## Actions
+What the role CAN do
+
+## NotActions
+What the role is EXPLICITLY BLOCKED from doing
+
+---
+
+## Contributor Example
+
+Contributor can:
+- Create resources
+- Modify resources
+- Delete resources
+
+BUT cannot:
+- Assign roles
+- Modify access control
+
+Because of:
+
+"NotActions": [
+  "Microsoft.Authorization/*"
+]
+
+---
+
+# 🧠 MEMORY RULE
+
+If you see:
+"Cannot assign roles"
+
+👉 It is ALWAYS:
+**Contributor**
+---
 
 ## 🛑 Locks
 
