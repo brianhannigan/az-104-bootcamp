@@ -43,6 +43,8 @@ Today you:
 
 ## ⏲️ Day Timer
 
+[▶ Open running timers for this day](../assets/running-timers.html?day=day09)
+
 | Timer | Target |
 |---|---|
 | Total Day Timer | 8h 00m |

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AZ-104 Running Timers</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 1000px; padding: 0 1rem; }
+    .card { border: 1px solid #8884; border-radius: 10px; padding: 1rem; margin-bottom: 1rem; }
+    .row { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
+    button, select { padding: .45rem .7rem; border-radius: 8px; border: 1px solid #8886; }
+    .timer { font-size: 1.5rem; font-weight: 700; min-width: 160px; }
+    .small { opacity: .8; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <h1>AZ-104 Running Timers</h1>
+  <p class="small">Track time per section. Timers save locally in your browser so they persist if you refresh.</p>
+
+  <div class="row" style="margin-bottom:1rem;">
+    <label for="daySelect"><strong>Day:</strong></label>
+    <select id="daySelect"></select>
+    <button id="resetDay">Reset all timers for this day</button>
+  </div>
+
+  <div id="timers"></div>
+
+  <script>
+    const plans = {
+      day01: { name: "Day 1 - Identity, RBAC", sessions: [["Concepts", "2h 00m"], ["Hands-on Labs", "3h 30m"], ["Quick Review", "45m"], ["Practice & Recap", "1h 45m"]] },
+      day02: { name: "Day 2 - Networking Core", sessions: [["Concepts", "2h 15m"], ["Hands-on Labs", "3h 15m"], ["Quick Review", "45m"], ["Practice & Recap", "1h 45m"]] },
+      day03: { name: "Day 3 - Networking Advanced", sessions: [["Concepts", "2h 30m"], ["Hands-on Labs", "3h 15m"], ["Quick Review", "45m"], ["Practice & Recap", "1h 45m"]] },
+      day04: { name: "Day 4 - Storage", sessions: [["Concepts", "2h 15m"], ["Hands-on Labs", "3h 00m"], ["Quick Review", "1h 00m"], ["Practice & Recap", "1h 45m"]] },
+      day05: { name: "Day 5 - Compute", sessions: [["Concepts", "2h 15m"], ["Hands-on Labs", "3h 00m"], ["Quick Review", "1h 00m"], ["Practice & Recap", "1h 45m"]] },
+      day06: { name: "Day 6 - App Services & Containers", sessions: [["Concepts", "2h 00m"], ["Hands-on Labs", "3h 30m"]] },
+      day07: { name: "Day 7 - Monitoring & Backup", sessions: [["Concepts", "2h 00m"], ["Hands-on Labs", "3h 30m"]] },
+      day08: { name: "Day 8 - Scenarios", sessions: [["Warm-up", "1h 30m"], ["Scenario Labs", "4h 00m"], ["Review", "1h 00m"], ["Recap", "1h 30m"]] },
+      day09: { name: "Day 9 - Weak Areas", sessions: [["Weak Area Sprint", "2h 00m"], ["Knowledge Check", "45m"], ["Flashcard Drill", "1h 00m"], ["Scenario Revision", "1h 30m"], ["Rapid Drill", "45m"], ["Final Practice", "2h 00m"]] },
+      day10: { name: "Day 10 - Final Review", sessions: [["Cheat Sheet Pass", "1h 30m"], ["Gotchas Review", "1h 00m"], ["Mock Exam", "2h 00m"], ["Mock Review", "1h 00m"], ["Final Notes", "1h 00m"], ["Readiness Check", "1h 00m"]] }
+    };
+
+    const toSeconds = (txt) => {
+      const h = /([0-9]+)h/.exec(txt);
+      const m = /([0-9]+)m/.exec(txt);
+      return (h ? Number(h[1]) * 3600 : 0) + (m ? Number(m[1]) * 60 : 0);
+    };
+
+    const fmt = (s) => {
+      const sign = s < 0 ? '-' : '';
+      s = Math.abs(s);
+      const hh = String(Math.floor(s / 3600)).padStart(2, '0');
+      const mm = String(Math.floor((s % 3600) / 60)).padStart(2, '0');
+      const ss = String(s % 60).padStart(2, '0');
+      return `${sign}${hh}:${mm}:${ss}`;
+    };
+
+    const stateKey = (day, idx) => `az104_timer_${day}_${idx}`;
+
+    function loadState(day, idx, target) {
+      const raw = localStorage.getItem(stateKey(day, idx));
+      if (!raw) return { remaining: target, running: false, updatedAt: Date.now() };
+      const st = JSON.parse(raw);
+      if (st.running) {
+        const elapsed = Math.floor((Date.now() - st.updatedAt) / 1000);
+        st.remaining -= elapsed;
+      }
+      st.running = false;
+      st.updatedAt = Date.now();
+      return st;
+    }
+
+    function saveState(day, idx, st) {
+      st.updatedAt = Date.now();
+      localStorage.setItem(stateKey(day, idx), JSON.stringify(st));
+    }
+
+    const daySelect = document.getElementById('daySelect');
+    const timersEl = document.getElementById('timers');
+    const resetDay = document.getElementById('resetDay');
+
+    Object.entries(plans).forEach(([key, plan]) => {
+      const opt = document.createElement('option');
+      opt.value = key;
+      opt.textContent = plan.name;
+      daySelect.appendChild(opt);
+    });
+
+    const queryDay = new URLSearchParams(location.search).get('day');
+    if (queryDay && plans[queryDay]) daySelect.value = queryDay;
+
+    let tick = null;
+
+    function render() {
+      const day = daySelect.value || 'day01';
+      const plan = plans[day];
+      timersEl.innerHTML = '';
+
+      const rows = plan.sessions.map(([name, targetText], idx) => {
+        const target = toSeconds(targetText);
+        const st = loadState(day, idx, target);
+
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <h3>${idx + 1}. ${name}</h3>
+          <div class="small">Target: ${targetText}</div>
+          <div class="row" style="margin-top:.6rem;">
+            <div class="timer" data-role="time">${fmt(st.remaining)}</div>
+            <button data-act="start">Start</button>
+            <button data-act="pause">Pause</button>
+            <button data-act="reset">Reset</button>
+          </div>
+        `;
+
+        const timeEl = card.querySelector('[data-role="time"]');
+        const startBtn = card.querySelector('[data-act="start"]');
+        const pauseBtn = card.querySelector('[data-act="pause"]');
+        const resetBtn = card.querySelector('[data-act="reset"]');
+
+        startBtn.onclick = () => { st.running = true; saveState(day, idx, st); };
+        pauseBtn.onclick = () => { st.running = false; saveState(day, idx, st); };
+        resetBtn.onclick = () => { st.remaining = target; st.running = false; saveState(day, idx, st); timeEl.textContent = fmt(st.remaining); };
+
+        timersEl.appendChild(card);
+        return { st, timeEl };
+      });
+
+      clearInterval(tick);
+      tick = setInterval(() => {
+        rows.forEach(({ st, timeEl }) => {
+          if (st.running) {
+            st.remaining -= 1;
+            timeEl.textContent = fmt(st.remaining);
+          }
+        });
+      }, 1000);
+    }
+
+    daySelect.onchange = () => {
+      const day = daySelect.value;
+      history.replaceState(null, '', `?day=${day}`);
+      render();
+    };
+
+    resetDay.onclick = () => {
+      const day = daySelect.value;
+      const count = plans[day].sessions.length;
+      for (let i = 0; i < count; i++) localStorage.removeItem(stateKey(day, i));
+      render();
+    };
+
+
+    setInterval(() => {
+      const day = daySelect.value;
+      const plan = plans[day];
+      plan.sessions.forEach(([_, targetText], idx) => {
+        const target = toSeconds(targetText);
+        const st = loadState(day, idx, target);
+        saveState(day, idx, st);
+      });
+    }, 5000);
+
+    render();
+  </script>
+</body>
+</html>

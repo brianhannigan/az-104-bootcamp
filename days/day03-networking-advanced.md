@@ -44,6 +44,8 @@ Microsoft will test:
 
 ## ⏲️ Day Timer
 
+[▶ Open running timers for this day](../assets/running-timers.html?day=day03)
+
 | Timer | Target |
 |---|---|
 | Total Day Timer | 8h 15m |

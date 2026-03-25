@@ -48,6 +48,8 @@ You already have:
 
 ## ⏲️ Day Timer
 
+[▶ Open running timers for this day](../assets/running-timers.html?day=day01)
+
 | Timer | Target |
 |---|---|
 | Total Day Timer | 8h 00m |

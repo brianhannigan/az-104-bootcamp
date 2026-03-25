@@ -45,6 +45,8 @@ AZ-104 tests:
 
 ## ⏲️ Day Timer
 
+[▶ Open running timers for this day](../assets/running-timers.html?day=day06)
+
 | Timer | Target |
 |---|---|
 | Total Day Timer | 7h 30m |
