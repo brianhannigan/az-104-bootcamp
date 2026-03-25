@@ -517,6 +517,348 @@ Repeat from memory:
 - Role differences
 
 ---
+# DAY X – IDENTITY SCENARIO DRILLS (AZ-104)
+
+---
+
+# ⏱️ Time Plan
+
+| Block | Time |
+|------|------|
+| Concepts Review | 1–2 hrs |
+| Scenario Drills | 3–4 hrs |
+| Practice + Review | 2 hrs |
+
+---
+
+# 🔹 STEP 1 – TEACH (EXAM-FOCUSED)
+
+## 🧩 Identity Core Mapping
+
+| Concept | Meaning |
+|--------|--------|
+| Entra Joined | Company-owned, cloud-only |
+| Hybrid Joined | On-prem + Azure |
+| Registered | Personal / BYOD |
+| Guest User | External user |
+| Managed Identity | App identity (no secrets) |
+
+---
+
+## 🔐 RBAC QUICK MAP
+
+| Role | Capability |
+|------|-----------|
+| Reader | View |
+| Contributor | Manage resources |
+| Owner | Full control |
+| User Access Admin | Assign roles |
+
+---
+
+## 🧠 MEMORY RULE
+
+- **Join = Company**
+- **Hybrid = Both**
+- **Registered = Personal**
+- **Guest = External**
+
+---
+
+# 🔹 STEP 2 – SCENARIO DRILLS
+
+---
+
+## 🧪 SCENARIO 1
+
+A company uses only cloud services. New laptops should sign in using company accounts with no on-prem dependency.
+
+What should you use?
+
+A. Registered  
+B. Entra Joined  
+C. Hybrid Joined  
+D. Domain Joined  
+
+✅ **Answer: B – Entra Joined**
+
+---
+
+## 🧪 SCENARIO 2
+
+Devices are already domain-joined on-prem but must also appear in Azure for cloud apps.
+
+A. Registered  
+B. Entra Joined  
+C. Hybrid Joined  
+D. Workgroup  
+
+✅ **Answer: C – Hybrid Joined**
+
+---
+
+## 🧪 SCENARIO 3
+
+A user accesses email from a personal phone. The company does not want full control of the device.
+
+A. Registered  
+B. Entra Joined  
+C. Hybrid Joined  
+D. Owner  
+
+✅ **Answer: A – Registered**
+
+---
+
+## 🧪 SCENARIO 4
+
+You need to give a contractor access using their own company login.
+
+A. Member user  
+B. Guest user  
+C. Managed identity  
+D. Local account  
+
+✅ **Answer: B – Guest user**
+
+---
+
+## 🧪 SCENARIO 5
+
+A user must manage VMs but cannot assign permissions.
+
+A. Owner  
+B. Contributor  
+C. Reader  
+D. User Access Admin  
+
+✅ **Answer: B – Contributor**
+
+---
+
+## 🧪 SCENARIO 6
+
+A user must assign permissions but not manage resources.
+
+A. Owner  
+B. Contributor  
+C. User Access Admin  
+D. Reader  
+
+✅ **Answer: C – User Access Admin**
+
+---
+
+## 🧪 SCENARIO 7
+
+Help desk needs read-only access across subscription.
+
+A. Reader  
+B. Contributor  
+C. Owner  
+D. Admin  
+
+✅ **Answer: A – Reader**
+
+---
+
+## 🧪 SCENARIO 8
+
+Users must reset their own passwords.
+
+A. Conditional Access  
+B. SSPR  
+C. RBAC  
+D. NSG  
+
+✅ **Answer: B – SSPR**
+
+---
+
+## 🧪 SCENARIO 9
+
+An app needs to securely access Azure resources without storing credentials.
+
+A. Access keys  
+B. SAS  
+C. Managed Identity  
+D. Guest user  
+
+✅ **Answer: C – Managed Identity**
+
+---
+
+## 🧪 SCENARIO 10
+
+An app needs to access Key Vault securely.
+
+A. Storage key  
+B. Managed identity + RBAC  
+C. Admin account  
+D. Guest  
+
+✅ **Answer: B – Managed Identity + RBAC**
+
+---
+
+## 🧪 SCENARIO 11
+
+You want to group subscriptions and apply policies across them.
+
+A. Resource group  
+B. Management group  
+C. NSG  
+D. Subscription tag  
+
+✅ **Answer: B – Management group**
+
+---
+
+## 🧪 SCENARIO 12
+
+A user has Reader at subscription and Contributor at resource group.
+
+What access do they have in that resource group?
+
+A. Reader  
+B. Contributor  
+C. Owner  
+D. None  
+
+✅ **Answer: B – Contributor**
+
+---
+
+## 🧪 SCENARIO 13
+
+Regional admins should manage only users in their region.
+
+A. Resource groups  
+B. Administrative units  
+C. NSG  
+D. Availability zones  
+
+✅ **Answer: B – Administrative units**
+
+---
+
+## 🧪 SCENARIO 14
+
+Admins should only elevate privileges when needed.
+
+A. Policy  
+B. PIM  
+C. NSG  
+D. Budget  
+
+✅ **Answer: B – PIM**
+
+---
+
+## 🧪 SCENARIO 15
+
+Require MFA when users sign in from outside trusted locations.
+
+A. RBAC  
+B. Conditional Access  
+C. NSG  
+D. UDR  
+
+✅ **Answer: B – Conditional Access**
+
+---
+
+# 🔹 STEP 3 – EXAM TRAPS
+
+🚨 THESE WILL TRICK YOU
+
+---
+
+### Trap 1
+“Personal device”
+→ **Registered**
+
+---
+
+### Trap 2
+“Domain joined + Azure”
+→ **Hybrid**
+
+---
+
+### Trap 3
+“Cloud-only company device”
+→ **Entra Joined**
+
+---
+
+### Trap 4
+“External user”
+→ **Guest**
+
+---
+
+### Trap 5
+“App authentication”
+→ **Managed Identity**
+
+---
+
+### Trap 6
+“Enforce login rules (MFA/location)”
+→ **Conditional Access**
+
+---
+
+### Trap 7
+“Assign permissions only”
+→ **User Access Admin**
+
+---
+
+# 🔹 STEP 4 – RAPID FIRE QUIZ
+
+Answer quickly without thinking too long:
+
+1. BYOD device → ?  
+2. On-prem + Azure device → ?  
+3. External contractor → ?  
+4. App identity → ?  
+5. Reset password → ?  
+6. Assign roles → ?  
+7. Secure login rules → ?  
+
+---
+
+# ✅ ANSWERS
+
+1. Registered  
+2. Hybrid Joined  
+3. Guest  
+4. Managed Identity  
+5. SSPR  
+6. User Access Admin  
+7. Conditional Access  
+
+---
+
+# 🧠 FINAL MEMORY LOCK
+
+Say this out loud:
+
+- Join = Company  
+- Hybrid = Both  
+- Registered = Personal  
+- Guest = External  
+- Managed Identity = Apps  
+
+---
+
+# 🎯 GOAL
+
+If you can answer these instantly →  
+You will **NOT miss identity questions on AZ-104**
+---
 
 # 🚨 Homework
 
