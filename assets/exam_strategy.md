@@ -1,5 +1,7 @@
 # Exam Strategy
 
+![Animated AZ-104 exam strategy workflow](./exam_strategy.svg)
+
 ## How to Approach Questions
 
 1. Eliminate clearly wrong answers first.

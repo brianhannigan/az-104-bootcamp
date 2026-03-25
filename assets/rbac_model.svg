@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" role="img" aria-labelledby="title desc">
+  <title id="title">RBAC Mental Model</title>
+  <desc id="desc">Animated hierarchy with downward inheritance and role badges.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbfcff"/>
+      <stop offset="100%" stop-color="#edf1ff"/>
+    </linearGradient>
+    <linearGradient id="scope" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5c2d91"/>
+      <stop offset="100%" stop-color="#3f1f66"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b2d78"/>
+    </marker>
+  </defs>
+  <rect width="980" height="560" fill="url(#bg)"/>
+  <text x="490" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#321f52">RBAC Mental Model</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" fill="white" text-anchor="middle">
+    <rect x="365" y="75" width="250" height="60" rx="12" fill="url(#scope)"/>
+    <text x="490" y="112" font-size="19" font-weight="700">Management Group</text>
+
+    <rect x="365" y="165" width="250" height="60" rx="12" fill="url(#scope)"/>
+    <text x="490" y="202" font-size="19" font-weight="700">Subscription</text>
+
+    <rect x="365" y="255" width="250" height="60" rx="12" fill="url(#scope)"/>
+    <text x="490" y="292" font-size="19" font-weight="700">Resource Group</text>
+
+    <rect x="365" y="345" width="250" height="60" rx="12" fill="url(#scope)"/>
+    <text x="490" y="382" font-size="19" font-weight="700">Resource</text>
+  </g>
+
+  <g stroke="#4b2d78" stroke-width="4" marker-end="url(#arrow)">
+    <line x1="490" y1="136" x2="490" y2="160"/>
+    <line x1="490" y1="226" x2="490" y2="250"/>
+    <line x1="490" y1="316" x2="490" y2="340"/>
+  </g>
+
+  <text x="690" y="170" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2a2142">Permissions flow downward</text>
+  <path d="M660,176 C700,200 700,300 640,380" fill="none" stroke="#2a2142" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#2a2142">
+    <rect x="80" y="105" width="230" height="42" rx="10" fill="#e7ddf5"/><text x="95" y="131">Reader: view resources only</text>
+    <rect x="80" y="157" width="230" height="42" rx="10" fill="#e7ddf5"/><text x="95" y="183">Contributor: manage resources</text>
+    <rect x="80" y="209" width="230" height="42" rx="10" fill="#e7ddf5"/><text x="95" y="235">Owner: full control + access</text>
+    <rect x="80" y="261" width="230" height="42" rx="10" fill="#e7ddf5"/><text x="95" y="287">User Access Admin: role assignments</text>
+  </g>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#321f52">
+    <text x="365" y="470">RBAC = who can do what</text>
+    <text x="365" y="500">Policy = what is allowed</text>
+    <text x="365" y="530">Locks = protect from changes/deletes</text>
+  </g>
+
+  <circle cx="355" cy="375" r="8" fill="#ffb900">
+    <animate attributeName="cy" values="105;375;105" dur="4s" repeatCount="indefinite"/>
+  </circle>
+</svg>

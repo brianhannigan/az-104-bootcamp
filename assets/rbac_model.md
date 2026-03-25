@@ -1,12 +1,14 @@
 # RBAC Mental Model
 
+![Animated RBAC inheritance and scope model](./rbac_model.svg)
+
 Management Group  
-â†“  
+↓  
 Subscription  
-â†“  
+↓  
 Resource Group  
-â†“  
-Resource  
+↓  
+Resource
 
 ## Rules
 

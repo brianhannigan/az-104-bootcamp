@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Azure Core Architecture Hierarchy</title>
+  <desc id="desc">Animated diagram showing Tenant to Subscription to Resource Group to Resources.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef5ff"/>
+    </linearGradient>
+    <linearGradient id="box" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0078d4"/>
+      <stop offset="100%" stop-color="#005a9e"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#246"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="560" fill="url(#bg)"/>
+  <text x="480" y="44" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#143a66">Azure Core Architecture</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="19" fill="white" text-anchor="middle" filter="url(#shadow)">
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="0s" dur="0.4s" fill="freeze"/>
+      <rect x="290" y="78" width="380" height="78" rx="14" fill="url(#box)"/>
+      <text x="480" y="111" font-weight="700">Tenant (Microsoft Entra ID)</text>
+      <text x="480" y="136" font-size="15">Identity and trust boundary</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="0.5s" dur="0.4s" fill="freeze"/>
+      <rect x="270" y="200" width="420" height="78" rx="14" fill="url(#box)"/>
+      <text x="480" y="233" font-weight="700">Subscription</text>
+      <text x="480" y="258" font-size="15">Billing, quotas, governance boundary</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="1.0s" dur="0.4s" fill="freeze"/>
+      <rect x="250" y="322" width="460" height="78" rx="14" fill="url(#box)"/>
+      <text x="480" y="355" font-weight="700">Resource Group</text>
+      <text x="480" y="380" font-size="15">Logical container for related resources</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="1.5s" dur="0.4s" fill="freeze"/>
+      <rect x="230" y="444" width="500" height="78" rx="14" fill="url(#box)"/>
+      <text x="480" y="477" font-weight="700">Resources</text>
+      <text x="480" y="502" font-size="15">VMs, Storage, VNets, Databases, Apps</text>
+    </g>
+  </g>
+
+  <g stroke="#246" stroke-width="4" marker-end="url(#arrow)" opacity="0.85">
+    <line x1="480" y1="160" x2="480" y2="195" stroke-dasharray="6 6">
+      <animate attributeName="stroke-dashoffset" from="24" to="0" dur="1.3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="480" y1="282" x2="480" y2="317" stroke-dasharray="6 6">
+      <animate attributeName="stroke-dashoffset" from="24" to="0" dur="1.3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="480" y1="404" x2="480" y2="439" stroke-dasharray="6 6">
+      <animate attributeName="stroke-dashoffset" from="24" to="0" dur="1.3s" repeatCount="indefinite"/>
+    </line>
+  </g>
+</svg>

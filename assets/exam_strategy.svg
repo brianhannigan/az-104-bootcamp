@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" role="img" aria-labelledby="title desc">
+  <title id="title">Exam Strategy Workflow</title>
+  <desc id="desc">Animated exam answering sequence with keyword scan and decision checks.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffef8"/>
+      <stop offset="100%" stop-color="#fff6da"/>
+    </linearGradient>
+    <linearGradient id="step" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff8c00"/>
+      <stop offset="100%" stop-color="#c75f00"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#915100"/>
+    </marker>
+  </defs>
+  <rect width="980" height="560" fill="url(#bg)"/>
+  <text x="490" y="42" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700" fill="#6d3d00">AZ-104 Exam Strategy</text>
+
+  <g font-family="Segoe UI, Arial, sans-serif" fill="white" text-anchor="middle">
+    <rect x="70" y="110" width="200" height="84" rx="13" fill="url(#step)"/>
+    <text x="170" y="145" font-size="20" font-weight="700">1) Eliminate</text>
+    <text x="170" y="171" font-size="15">Obviously wrong choices</text>
+
+    <rect x="300" y="110" width="200" height="84" rx="13" fill="url(#step)"/>
+    <text x="400" y="145" font-size="20" font-weight="700">2) Keyword scan</text>
+    <text x="400" y="171" font-size="15">Least privilege, deny, HA</text>
+
+    <rect x="530" y="110" width="200" height="84" rx="13" fill="url(#step)"/>
+    <text x="630" y="145" font-size="20" font-weight="700">3) Distinguish</text>
+    <text x="630" y="171" font-size="15">RBAC/Policy, NSG/UDR</text>
+
+    <rect x="760" y="110" width="160" height="84" rx="13" fill="url(#step)"/>
+    <text x="840" y="145" font-size="20" font-weight="700">4) Flag</text>
+    <text x="840" y="171" font-size="15">Return to long items</text>
+  </g>
+
+  <g stroke="#915100" stroke-width="4" marker-end="url(#arrow)">
+    <line x1="270" y1="152" x2="295" y2="152"/>
+    <line x1="500" y1="152" x2="525" y2="152"/>
+    <line x1="730" y1="152" x2="755" y2="152"/>
+  </g>
+
+  <circle cx="170" cy="152" r="8" fill="#0078d4">
+    <animateMotion dur="5s" repeatCount="indefinite" path="M0,0 L670,0"/>
+  </circle>
+
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#6d3d00">
+    <text x="90" y="270" font-size="22" font-weight="700">High-value habits</text>
+    <text x="90" y="305" font-size="18">• Choose the simplest Azure-native correct answer</text>
+    <text x="90" y="335" font-size="18">• Watch scope words: tenant, subscription, resource group</text>
+    <text x="90" y="365" font-size="18">• "Must prevent" implies deny/enforce, not just organize</text>
+    <text x="90" y="395" font-size="18">• Map each service to its primary job quickly</text>
+  </g>
+</svg>

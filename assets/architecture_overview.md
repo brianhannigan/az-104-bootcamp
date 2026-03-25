@@ -1,11 +1,13 @@
 # Azure Core Architecture
 
+![Animated Azure core architecture hierarchy](./architecture_overview.svg)
+
 Tenant (Microsoft Entra ID)  
-â†“  
+↓  
 Subscription (billing and governance boundary)  
-â†“  
+↓  
 Resource Group (logical container)  
-â†“  
+↓  
 Resources (VM, Storage, Network, etc.)
 
 ## Key Ideas
