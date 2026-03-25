@@ -43,9 +43,17 @@ AZ-104 tests:
 | Hands-on Labs | 3–4 hrs |
 | Practice + Review | 1–2 hrs |
 
+## ⏲️ Day Timer
+
+| Timer | Target |
+|---|---|
+| Total Day Timer | 7h 30m |
+
 ---
 
 # 🔹 STEP 1 – TEACH (Exam-Focused)
+
+**⏲️ Session Timer:** 2h 00m
 
 ## 🌐 Azure App Service (Core PaaS)
 
@@ -116,6 +124,8 @@ Use slots (dev/stage/prod) to:
 ---
 
 # 🔹 STEP 2 – HANDS-ON LAB
+
+**⏲️ Session Timer:** 3h 30m
 
 ## 🎯 Scenario
 

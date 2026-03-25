@@ -46,9 +46,17 @@ You already have:
 | Hands-on Labs | 3–4 hrs |
 | Practice + Review | 1–2 hrs |
 
+## ⏲️ Day Timer
+
+| Timer | Target |
+|---|---|
+| Total Day Timer | 8h 00m |
+
 ---
 
 # 🔹 STEP 1 – TEACH (Exam-Focused)
+
+**⏲️ Session Timer:** 2h 00m
 
 ## 🧩 Azure Hierarchy
 
@@ -219,6 +227,8 @@ Know:
 
 # 🔹 STEP 2 – HANDS-ON LAB
 
+**⏲️ Session Timer:** 3h 30m
+
 ## 🎯 Scenario
 
 📘 Microsoft Learn lab support:
@@ -298,6 +308,8 @@ New-AzResourceLock `
 
 # 🔹 STEP 3 – EXAM TRAPS
 
+**⏲️ Session Timer:** 45m
+
 ❌ Trap 1  
 User blocked despite Contributor  
 👉 Policy restriction
@@ -321,6 +333,8 @@ Minimize permissions
 ---
 
 # 🔹 STEP 4 – PRACTICE QUESTIONS
+
+**⏲️ Session Timer:** 1h 45m
 
 Q1  
 User must create VMs but NOT assign roles.

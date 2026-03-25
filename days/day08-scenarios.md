@@ -43,9 +43,17 @@ They test:
 | Scenario Labs | 3–4 hrs |
 | Practice Questions | 1–2 hrs |
 
+## ⏲️ Day Timer
+
+| Timer | Target |
+|---|---|
+| Total Day Timer | 8h 00m |
+
 ---
 
 # 🔹 STEP 1 – RAPID REVIEW (CRITICAL CONCEPTS)
+
+**⏲️ Session Timer:** 1h 30m
 
 ## 🔐 Identity & RBAC
 
@@ -107,6 +115,8 @@ They test:
 ---
 
 # 🔹 STEP 2 – SCENARIO LABS (REAL EXAM STYLE)
+
+**⏲️ Session Timer:** 4h 00m
 
 ## 🎯 Scenario 1: Secure Storage Access
 
@@ -182,6 +192,8 @@ Requirement:
 
 # 🔹 STEP 3 – EXAM TRAPS (FINAL ROUND)
 
+**⏲️ Session Timer:** 1h 00m
+
 ❌ Trap 1  
 Choosing NSG instead of UDR  
 👉 NSG = allow/deny  
@@ -220,6 +232,8 @@ Forgetting both NSGs must allow traffic
 ---
 
 # 🔹 STEP 4 – PRACTICE QUESTIONS (EXAM STYLE)
+
+**⏲️ Session Timer:** 1h 30m
 
 Q1  
 You must block resources without tags.

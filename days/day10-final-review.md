@@ -42,9 +42,17 @@ You are:
 | Weak Area Touch-Up | 2 hrs |
 | Final Mental Prep | 1 hr |
 
+## ⏲️ Day Timer
+
+| Timer | Target |
+|---|---|
+| Total Day Timer | 7h 30m |
+
 ---
 
 # 🔹 STEP 1 – MASTER CHEAT SHEET (CRITICAL)
+
+**⏲️ Session Timer:** 1h 30m
 
 ## 🔐 Identity & Governance
 
@@ -132,6 +140,8 @@ You are:
 
 # 🔹 STEP 2 – FINAL EXAM TRAPS
 
+**⏲️ Session Timer:** 1h 00m
+
 ❌ Trap 1  
 RBAC vs Policy  
 👉 RBAC = access  
@@ -178,6 +188,8 @@ Storage security
 ---
 
 # 🔹 STEP 3 – FINAL PRACTICE (LAST CHECK)
+
+**⏲️ Session Timer:** 2h 00m
 
 Q1  
 You must block non-compliant resources.
@@ -265,6 +277,8 @@ Answer: B
 
 # 🔹 STEP 4 – FINAL READINESS CHECK
 
+**⏲️ Session Timer:** 1h 00m
+
 ## ✅ You Are Ready If:
 
 - You score 80%+ consistently  
@@ -282,6 +296,8 @@ Answer: B
 ---
 
 # 🔹 STEP 5 – EXAM DAY STRATEGY
+
+**⏲️ Session Timer:** 1h 00m
 
 ## 🧠 Before Exam
 
@@ -319,6 +335,8 @@ Microsoft wants:
 ---
 
 # 🔹 STEP 6 – CONFIDENCE RESET
+
+**⏲️ Session Timer:** 1h 00m
 
 You have now:
 

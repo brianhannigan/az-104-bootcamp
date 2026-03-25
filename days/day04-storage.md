@@ -42,9 +42,17 @@ Microsoft tests:
 | Hands-on Labs | 3–4 hrs |
 | Practice + Review | 1–2 hrs |
 
+## ⏲️ Day Timer
+
+| Timer | Target |
+|---|---|
+| Total Day Timer | 8h 00m |
+
 ---
 
 # 🔹 STEP 1 – TEACH (Exam-Focused)
+
+**⏲️ Session Timer:** 2h 15m
 
 ## 🧩 Storage Account (CORE CONCEPT)
 
@@ -216,6 +224,8 @@ Cost optimization = lifecycle policies
 
 # 🔹 STEP 2 – HANDS-ON LAB
 
+**⏲️ Session Timer:** 3h 00m
+
 ## 🎯 Scenario
 
 You will:
@@ -325,6 +335,8 @@ New-AzStorageAccount `
 
 # 🔹 STEP 3 – EXAM TRAPS
 
+**⏲️ Session Timer:** 1h 00m
+
 ❌ Trap 1  
 Using Access Keys when RBAC is better  
 👉 Always choose RBAC first
@@ -364,6 +376,8 @@ Private Endpoint vs Firewall
 ---
 
 # 🔹 STEP 4 – PRACTICE QUESTIONS
+
+**⏲️ Session Timer:** 1h 45m
 
 Q1  
 Best storage for images?
