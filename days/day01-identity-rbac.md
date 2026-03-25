@@ -28,7 +28,77 @@ You already have:
 - Tags
 - Cost basics
 
+
 ---
+
+# 🎬 Exam Readiness Zone Deep-Dive (Sarah Kong)
+
+**Source video:** https://learn.microsoft.com/en-us/shows/exam-readiness-zone/preparing-for-az-104-manage-azure-identities-and-governance-1-of-5
+**Use this as your Day 1 anchor review before labs.**
+
+## ⏱️ Timestamped notes (specific + complete for this episode)
+
+### 00:05–01:47 — Introduction
+- Frames this as **Episode 1 of 5** in Exam Readiness Zone for AZ-104.
+- Confirms this episode is focused on **Manage Azure identities and governance**.
+- Reinforces that success on AZ-104 requires understanding both **identity administration** and **governance controls**, not just memorizing terms.
+
+### 01:48–03:22 — Objectives
+- Maps the episode directly to exam skill area **“Manage Azure identities and governance (20–25%)”**.
+- Breaks Day 1 into the three tested objective groups:
+  1. **1.1 Manage Microsoft Entra ID users and groups**
+  2. **1.2 Manage access to Azure resources**
+  3. **1.3 Manage Azure subscriptions and governance**
+- Calls out that this domain is heavily scenario-based (you must choose the *best* control for a requirement).
+
+### 03:23–05:37 — 1.1 Manage Microsoft Entra ID users and groups
+- Expect tasks around **creating/managing users and groups** in Microsoft Entra ID.
+- Focus on lifecycle operations: update properties, reset credentials, and remove/restore when required.
+- Understand **group-based management** and when to use groups instead of direct per-user administration.
+- Be comfortable with **guest/external identity collaboration** (B2B-style access patterns).
+- Tie identity operations to least-privilege administration and operational efficiency at scale.
+
+### 05:38–08:39 — 1.2 Manage access to Azure resources
+- Connects identity to authorization via **Azure RBAC** (who can do what, at which scope).
+- Know core built-in roles and assignment behavior across scope hierarchy:
+  - Management group → subscription → resource group → resource
+- Emphasizes **scope + inheritance + additive permissions** for exam scenarios.
+- Be able to decide and implement least-privilege access by selecting the right role at the right scope.
+- Distinguish access assignment concerns (RBAC) from governance compliance concerns (Policy/Locks).
+
+### 08:40–11:28 — 1.3 Manage Azure subscriptions and governance
+- Governance coverage includes organizing resources with:
+  - **Management groups**
+  - **Subscriptions**
+  - **Resource groups**
+- Reinforces governance controls you must choose correctly in scenarios:
+  - **Azure Policy** for compliance enforcement
+  - **Resource locks** for delete/modify protection
+  - **Tags** for organization, reporting, and cost tracking
+- Highlights operational governance posture: standardization, guardrails, and control at scale.
+
+### 11:29–12:01 — Other skills
+- Briefly references the remaining AZ-104 domains from the 5-part series:
+  - Storage
+  - Compute
+  - Virtual networking
+  - Monitoring/maintenance
+- Reminder: identity/governance decisions influence all remaining domains.
+
+### 12:02–End — Review
+- Summarizes the exam-focus takeaway:
+  - Master Entra users/groups administration
+  - Master RBAC access assignment logic
+  - Master subscription/resource governance using Policy, locks, and tags
+- Recommends validating knowledge with hands-on tasks immediately after concept review.
+
+## ✅ What to add to your Day 1 execution
+
+After watching this video, do these in order:
+1. Create users + groups in Entra ID and perform at least one lifecycle change (reset/update/remove/restore pattern).
+2. Assign RBAC at different scopes and verify effective access behavior.
+3. Apply an Azure Policy assignment, add a lock, and test governance outcomes on a resource group.
+4. Tag resources and validate filtering/cost-report grouping.
 
 
 ## 📚 Microsoft Learn Links (Use with Each Section)
