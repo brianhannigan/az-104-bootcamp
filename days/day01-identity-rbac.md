@@ -144,6 +144,12 @@ Resource
 - Permissions flow **downward**.
 - Always assign at **lowest scope possible**.
 
+### 🏛️ Management Groups (Governance at scale)
+
+- Organize subscriptions into a hierarchy.
+- Apply **RBAC + Azure Policy** at higher scope for consistency.
+- Assignments at management group scope inherit downward to subscriptions/resource groups/resources.
+
 ![Day 1 RBAC and governance flow](../assets/day01-rbac-governance-flow.svg)
 
 ### 🔐 RBAC (Role-Based Access Control)
@@ -204,6 +210,90 @@ If question says:
 “User should manage resources but NOT permissions”
 
 👉 Answer = **Contributor**
+
+---
+
+### 📜 Azure Policy (Definition vs Initiative vs Assignment)
+
+| Term | Meaning |
+|------|---------|
+| Definition | A single policy rule |
+| Initiative | A group of policy definitions |
+| Assignment | Applying a definition/initiative at a scope |
+
+#### Common policy effects (must memorize)
+- **Deny** → blocks non-compliant create/update.
+- **Audit** → records non-compliance only.
+- **Append** → adds extra fields at request time.
+- **Modify** → updates properties/tags during create or remediation.
+- **DeployIfNotExists** → deploys related resources/config when missing.
+
+🔥 Exam reminder: if requirement says “block creation,” use **Deny**; if it says “just report/log,” use **Audit**.
+
+---
+
+### 🧱 Resource Groups (RG) – tested details
+
+- Resource groups **cannot be nested**.
+- A resource group can contain **many resources** (not just one).
+- You can move many resource types between RGs/subscriptions, but some resources have move limitations.
+- RG location stores RG metadata; resources in that RG can be in different regions.
+
+---
+
+### 💳 Subscriptions
+
+- **Billing boundary**
+- **Access boundary**
+- **Policy boundary**
+
+Common models you should recognize in exam wording:
+- Pay-As-You-Go (PAYG)
+- Enterprise Agreement (EA)
+- Cloud Solution Provider (CSP)
+
+---
+
+### 🏷️ Tags
+
+- Tags are **key/value pairs**.
+- Primary uses: organization, cost reporting, automation grouping.
+- Tags are **not** a security boundary/control.
+- Tags are **not inherited by default** (use Policy if you must enforce or add them).
+
+---
+
+### 💰 Cost Management essentials
+
+Core tools:
+- Budgets
+- Cost alerts
+- Cost analysis
+- Azure Advisor cost recommendations
+
+Optimization patterns:
+- Reserved Instances / Savings options
+- Azure Hybrid Benefit (eligible licenses)
+
+🔥 Exam reminder: budgets/alerts notify; they do **not** automatically stop spending.
+
+---
+
+### 🪪 Identity licensing quick map (exam favorite)
+
+- Conditional Access → typically requires Microsoft Entra ID **P1**
+- Identity Protection → **P2**
+- Privileged Identity Management (PIM) → **P2**
+
+---
+
+### 🚨 Day 1 Governance Exam Rules (memorize)
+
+- **Deny** = block creation/update
+- **Audit** = log/report only
+- **Management Group** = multi-subscription governance control
+- **Tags** = organization/cost metadata (not security)
+- **Subscription** = billing + isolation boundary
 
 #### Exam trap
 Assign at higher scope → affects **everything below**.

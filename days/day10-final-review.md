@@ -116,11 +116,18 @@ You are:
 - Policy effects:
   - Deny = block  
   - Audit = log  
+  - Append = add fields  
+  - Modify = change/fix properties  
   - DeployIfNotExists = fix  
 
 - Budget = alert only  
 
 - Initiative = group policies  
+- Definition = single rule  
+- Assignment = apply at scope  
+- Management Group = policy/RBAC at multi-subscription scope  
+- Subscription = billing + access/policy boundary  
+- Tags = cost/organization metadata (not security, not inherited by default)  
 
 ---
 
