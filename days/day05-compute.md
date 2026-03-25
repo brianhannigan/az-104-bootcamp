@@ -63,6 +63,13 @@ You manage:
 
 ---
 
+## 🧩 VM Extensions (ADVANCED)
+
+- Custom Script Extension → run post-deployment scripts
+- Azure Monitor Agent → send telemetry/logs
+
+---
+
 ## 🧠 VM Sizing
 
 Choose based on:
@@ -81,6 +88,19 @@ Choose based on:
 | Standard HDD | Cheap, slow |
 | Standard SSD | Balanced |
 | Premium SSD | High performance |
+
+---
+
+## 🔐 Disk Encryption
+
+- Azure Disk Encryption (ADE)
+- Commonly integrates with Azure Key Vault for key management
+
+---
+
+## 🛠️ Run Command
+
+Run commands in VM from Azure control plane without direct SSH/RDP session.
 
 ---
 

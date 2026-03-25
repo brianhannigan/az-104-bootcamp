@@ -1,28 +1,27 @@
 # AZ-104 Bootcamp – Day 7  
-## Governance & Cost Management (HIGHLY TESTED – SCENARIO HEAVY)
+## Monitoring & Backup (HIGH VALUE – STRONG OVERLAP WITH SECURITY)
 
 ---
 
 # 🔥 Why This Matters
 
-This is where Microsoft tests **decision-making**.
+This section is where you gain easy exam points.
 
-You will see questions like:
-- “How do you enforce standards?”
-- “How do you control cost?”
-- “How do you prevent bad deployments?”
-
-👉 This is NOT technical — this is CONTROL & POLICY thinking
+AZ-104 tests:
+- Monitoring setup and alerting
+- Logs vs metrics decisions
+- Diagnostic settings
+- Backup and disaster recovery strategy
 
 ---
 
 # 🧠 Day 7 Objectives
 
-- Master Azure Policy (VERY TESTED)
-- Understand Initiatives
-- Learn Cost Management tools
-- Use Tags effectively
-- Apply Governance strategies
+- Understand Azure Monitor (CORE)
+- Learn Log Analytics and KQL
+- Configure diagnostic settings correctly
+- Understand Azure Backup + Recovery Services Vault
+- Learn Azure Site Recovery (ASR), RPO, and RTO
 
 ---
 
@@ -38,131 +37,94 @@ You will see questions like:
 
 # 🔹 STEP 1 – TEACH (Exam-Focused)
 
-## 📜 Azure Policy (CORE GOVERNANCE TOOL)
+## 📊 Azure Monitor
 
-Azure Policy = **enforces rules**
-
----
-
-## 🔥 RBAC vs Policy (CRITICAL)
-
-| Feature | Purpose |
-|--------|--------|
-| RBAC | WHO can access |
-| Policy | WHAT is allowed |
+Azure Monitor collects and analyzes:
+- Metrics
+- Logs
 
 ---
 
-## 🧠 Policy Effects (VERY TESTED)
+## 🔥 Metrics vs Logs (VERY IMPORTANT)
 
-| Effect | Meaning |
-|-------|--------|
-| Deny | Block deployment |
-| Audit | Log violation |
-| Append | Add property |
-| DeployIfNotExists | Auto-fix |
-
----
-
-## 🔥 EXAM KEY
-
-- Stop something → Deny  
-- Monitor → Audit  
-- Fix automatically → DeployIfNotExists  
+| Feature | Metrics | Logs |
+|--------|--------|------|
+| Speed | Fast | Slower |
+| Detail | Lower | Higher |
+| Typical use | Near real-time alerting | Deep investigation |
 
 ---
 
-## 📦 Policy Scope
+## 🧾 Log Types (ADVANCED)
 
-Can apply at:
-- Management Group
-- Subscription
-- Resource Group
-
----
-
-## 🧠 Initiatives
-
-Group of policies
-
-👉 Used for:
-- Compliance (e.g., security baseline)
+| Type | Description |
+|------|------------|
+| Activity Log | Subscription-level operations |
+| Resource Logs | Resource-level diagnostic events |
 
 ---
 
-## 🔥 EXAM TRICK
+## 📦 Log Analytics Workspace
 
-If question says:
-“Apply multiple policies together”
+Where logs are stored and queried with KQL.
 
-👉 Answer = Initiative
-
----
-
-## 🏷️ Tags
-
-Used for:
-- Cost tracking
-- Organization
+🔥 Exam key: “run query across logs” → Log Analytics Workspace.
 
 ---
 
-## 🔥 IMPORTANT
+## 🔎 KQL Example
 
-Tags DO NOT enforce rules  
-👉 Policy enforces
-
----
-
-## 💰 Cost Management
-
-Used to:
-- Track spending
-- Set budgets
-- Forecast usage
+```kql
+DeviceProcessEvents
+| where ProcessCommandLine contains "powershell"
+```
 
 ---
 
-## 🧠 Key Tools
+## ⚙️ Diagnostic Settings (HIGHLY TESTED)
 
-| Tool | Purpose |
+Diagnostic settings are required to send platform/resource logs to:
+- Log Analytics
+- Storage account
+- Event Hub
+
+👉 Without diagnostic settings, key logs may never arrive.
+
+---
+
+## 🚨 Alerts + Action Groups
+
+Alert flow:
+Condition → Alert rule → Action Group → Notification/Automation
+
+| Alert Type | Use |
+|-----------|-----|
+| Metric alert | CPU/memory thresholds |
+| Log alert | KQL-based conditions |
+
+---
+
+## 🔐 Azure Backup
+
+- Protects VMs/files/workloads
+- Uses Recovery Services Vault
+
+🔥 Exam key: backup for Azure VMs generally uses a Recovery Services Vault.
+
+---
+
+## ♻️ Azure Site Recovery (ASR)
+
+Used for disaster recovery/failover of full workloads (commonly VMs).
+
+---
+
+## 🧠 DR Concepts
+
+| Term | Meaning |
 |------|--------|
-| Budgets | Limit spending |
-| Alerts | Notify overuse |
-| Cost Analysis | Breakdown costs |
-
----
-
-## 🔥 EXAM RULE
-
-Budget does NOT stop spending  
-👉 Only alerts
-
----
-
-## 📊 Azure Advisor
-
-Gives:
-- Cost recommendations
-- Performance suggestions
-
----
-
-## 🔥 EXAM TRICK
-
-“Optimize cost automatically”
-
-👉 Advisor + Lifecycle + Right-sizing
-
----
-
-## 🧠 Governance Strategy
-
-Use together:
-- Policy
-- RBAC
-- Tags
-- Budgets
+| RPO | Acceptable data loss |
+| RTO | Acceptable downtime |
 
 ---
 
@@ -171,252 +133,48 @@ Use together:
 ## 🎯 Scenario
 
 You will:
-- Enforce tagging
-- Restrict regions
-- Track cost
-- Create budgets
+- Enable monitoring for a VM
+- Send logs to Log Analytics
+- Create alerts and action groups
+- Configure backup
+- Review DR/failover options
 
 ---
 
 ## 🔧 Portal Steps
 
-### 1. Create Policy
-
-Policy: Require tag "Environment"
-
----
-
-### 2. Assign Policy
-
-Scope: Subscription
+### 1. Create Log Analytics Workspace
+Name: law-day7
 
 ---
 
-### 3. Test Policy
-
-Create resource WITHOUT tag  
-👉 Should fail
+### 2. Configure Diagnostic Settings
+Send logs for target resources to the workspace
 
 ---
 
-### 4. Create Initiative
-
-Combine:
-- Require tag
-- Restrict region
-
----
-
-### 5. Assign Initiative
-
-Apply at subscription level
+### 3. Run KQL Query
+```kql
+Heartbeat
+| take 10
+```
 
 ---
 
-### 6. Create Budget
-
-Set monthly budget
-
----
-
-### 7. Create Alert
-
-Notify at 80%
+### 4. Create Alert Rule
+Trigger on CPU threshold or query condition
 
 ---
 
-### 8. Use Cost Analysis
-
-Review spending breakdown
-
----
-
-# 💻 CLI COMMANDS
-
-Assign policy:
-
-az policy assignment create \
-  --name require-tag \
-  --policy <policy-id> \
-  --scope /subscriptions/<id>
+### 5. Create Recovery Services Vault
+Name: rsv-day7
 
 ---
 
-Create budget:
-
-az consumption budget create \
-  --amount 1000 \
-  --time-grain monthly \
-  --name budget-day7 \
-  --resource-group rg-day1-core
+### 6. Enable Backup for VM
+Set policy and retention
 
 ---
 
-# 💻 PowerShell COMMANDS
-
-New-AzPolicyAssignment `
-  -Name "require-tag" `
-  -Scope "/subscriptions/<id>"
-
----
-
-# 🔹 STEP 3 – EXAM TRAPS
-
-❌ Trap 1  
-Thinking tags enforce rules  
-👉 They DO NOT
-
----
-
-❌ Trap 2  
-Budget stops spending  
-👉 It DOES NOT
-
----
-
-❌ Trap 3  
-RBAC used instead of Policy  
-👉 RBAC = access  
-👉 Policy = enforcement
-
----
-
-❌ Trap 4  
-Multiple policies separately applied  
-👉 Use Initiative
-
----
-
-❌ Trap 5  
-Wrong policy effect  
-👉 Deny vs Audit vs DeployIfNotExists
-
----
-
-# 🔹 STEP 4 – PRACTICE QUESTIONS
-
-Q1  
-Enforce tag requirement:
-
-A. RBAC  
-B. Policy  
-C. NSG  
-D. Lock  
-
-Answer: B
-
----
-
-Q2  
-Group multiple policies:
-
-A. Tag  
-B. Initiative  
-C. RBAC  
-D. Budget  
-
-Answer: B
-
----
-
-Q3  
-Stop deployment without tag:
-
-A. Audit  
-B. Deny  
-C. Append  
-D. Lock  
-
-Answer: B
-
----
-
-Q4  
-Notify when cost exceeds threshold:
-
-A. Policy  
-B. Budget  
-C. NSG  
-D. Disk  
-
-Answer: B
-
----
-
-Q5  
-Best tool for cost optimization:
-
-A. Advisor  
-B. NSG  
-C. RBAC  
-D. DNS  
-
-Answer: A
-
----
-
-Q6  
-Who can access resources:
-
-A. Policy  
-B. RBAC  
-C. Budget  
-D. Tag  
-
-Answer: B
-
----
-
-Q7  
-Automatically fix non-compliant resources:
-
-A. Deny  
-B. Audit  
-C. DeployIfNotExists  
-D. Lock  
-
-Answer: C
-
----
-
-# 🧠 MUST MEMORIZE
-
-- RBAC = WHO  
-- Policy = WHAT  
-
-- Deny = block  
-- Audit = monitor  
-- DeployIfNotExists = fix  
-
-- Budget = alert only  
-
----
-
-# 🔁 Reinforcement
-
-Repeat:
-
-- Policy vs RBAC
-- Budget behavior
-- Initiative purpose
-
----
-
-# 🚨 Homework
-
-1. Create policy
-2. Assign it
-3. Break deployment
-4. Create budget
-5. Answer:
-
-👉 What actually enforces rules?  
-👉 What only notifies?
-
----
-
-# ⏭️ Next: Day 8 (Review + Weak Area Reinforcement)
-
-- Mixed scenarios
-- Cross-topic questions
-- Exam-style thinking
+### 7. Review ASR Setup (Optional Advanced)
+Identify source/target region and failover workflow

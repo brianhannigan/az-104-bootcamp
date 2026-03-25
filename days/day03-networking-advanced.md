@@ -156,6 +156,45 @@ Private Endpoint vs Service Endpoint:
 
 ---
 
+## 🔐 Azure Firewall vs NSG (EXAM COMPARISON)
+
+| NSG | Azure Firewall |
+|-----|----------------|
+| Basic L3/L4 filtering | Advanced centralized filtering |
+| Applied to subnet/NIC | Deployed as managed firewall service |
+| No built-in NAT scenarios focus | Supports DNAT/SNAT scenarios |
+
+🔥 Rule of thumb: NSG for segment-level filtering, Azure Firewall for centralized and advanced control.
+
+---
+
+## 🛡️ Azure Bastion
+
+- Secure RDP/SSH through browser
+- No public IP required on target VMs
+
+👉 If exam asks for secure admin access without exposing VM public IP, Bastion is a top answer.
+
+---
+
+## ⚖️ Load Balancer vs Application Gateway
+
+| Service | Layer | Best for |
+|--------|-------|----------|
+| Azure Load Balancer | Layer 4 | TCP/UDP distribution |
+| Application Gateway | Layer 7 | HTTP/HTTPS routing + WAF scenarios |
+
+---
+
+## 🌉 Hybrid Connectivity Options
+
+| Type | Use |
+|------|-----|
+| VPN Gateway | Encrypted tunnel over internet |
+| ExpressRoute | Private dedicated connectivity |
+
+---
+
 ## 🌉 VPN Gateway (Basic Understanding)
 
 Used for:

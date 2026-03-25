@@ -153,6 +153,26 @@ RBAC > SAS > Keys
 
 ---
 
+## 🌐 Network Security for Storage (HIGH VALUE)
+
+| Feature | Purpose |
+|--------|---------|
+| Firewall | Restrict access by IP/network |
+| Service Endpoint | Secure access from selected subnets |
+| Private Endpoint | Private IP access from VNet |
+
+🔥 Exam pattern: “internal-only/private access” → Private Endpoint.
+
+---
+
+## 🛡️ Data Protection Features
+
+- Soft Delete → recover deleted blobs/files
+- Versioning → restore previous object versions
+- Immutability → prevent modification/deletion for retention window
+
+---
+
 ## 🌐 Networking for Storage
 
 You can:

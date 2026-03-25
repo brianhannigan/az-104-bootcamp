@@ -1,33 +1,29 @@
 # AZ-104 Bootcamp – Day 6  
-## Monitoring & Backup (HIGH VALUE – STRONG OVERLAP WITH SECURITY)
+## App Services & Containers (PaaS FOCUS – HIGH VALUE)
 
 ---
 
 # 🔥 Why This Matters
 
-This section is where YOU gain advantage.
-
-You already have:
-- Sentinel exposure ✅
-- Threat hunting mindset ✅
+This day bridges compute + modern app hosting.
 
 AZ-104 tests:
-- Monitoring setup
-- Alert logic
-- Log queries
-- Backup strategies
+- App Service configuration
+- Deployment slots
+- Authentication + networking for apps
+- Container hosting options in Azure
 
-👉 This is EASY points if done right
+👉 This is commonly mixed into scenario questions with networking and monitoring.
 
 ---
 
 # 🧠 Day 6 Objectives
 
-- Understand Azure Monitor (CORE)
-- Learn Log Analytics (VERY TESTED)
-- Create alerts and action groups
-- Understand metrics vs logs
-- Learn Azure Backup and Recovery Services Vault
+- Deepen App Service knowledge
+- Understand App Service Plan behavior
+- Learn deployment slots and swap strategy
+- Learn container options (ACI / AKS awareness / Web App for Containers)
+- Connect app hosting decisions to exam scenarios
 
 ---
 
@@ -43,142 +39,71 @@ AZ-104 tests:
 
 # 🔹 STEP 1 – TEACH (Exam-Focused)
 
-## 📊 Azure Monitor (CORE SERVICE)
+## 🌐 Azure App Service (Core PaaS)
 
-Azure Monitor = **central monitoring system**
+Best for:
+- Web apps
+- APIs
+- Rapid deployments
 
-Collects:
-- Metrics
-- Logs
+You manage:
+- App code
+- App settings
 
----
-
-## 🔥 Metrics vs Logs (VERY IMPORTANT)
-
-| Feature | Metrics | Logs |
-|--------|--------|------|
-| Speed | Fast | Slower |
-| Detail | Low | High |
-| Use | Alerts | Analysis |
+Azure manages:
+- OS patching
+- Runtime platform
+- Underlying infrastructure
 
 ---
 
-## 🧠 Simple Rule
+## 🧠 App Service Plan (VERY TESTED)
 
-Metrics = “Is something wrong?”  
-Logs = “What exactly happened?”
+Plan defines:
+- Region
+- Pricing tier
+- Scale (instance size/count)
 
----
-
-## 📦 Log Analytics Workspace
-
-Where logs are stored and queried
-
-👉 Used with KQL
+🔥 Key rule: multiple web apps can share one App Service Plan.
 
 ---
 
-## 🔥 EXAM KEY
+## 🔁 Deployment Slots
 
-If question says:
-“Query logs”
+Use slots (dev/stage/prod) to:
+- Validate before production
+- Swap with minimal downtime
 
-👉 Answer = Log Analytics
-
----
-
-## 🔎 KQL (Query Language)
-
-Used to:
-- Search logs
-- Investigate issues
-- Build alerts
+🔥 Exam pattern: “test new version before production cutover” → Deployment Slot + Swap.
 
 ---
 
-## 🧠 Example Tables
+## 🔐 App Service Security Basics
 
-- Heartbeat (VM status)
-- SecurityEvent
-- AzureActivity
-- DeviceProcessEvents (your background)
-
----
-
-## 🚨 Alerts
-
-Trigger when condition met
+- Managed Identity for secure Azure access
+- Authentication/Authorization (Easy Auth)
+- Access restrictions (IP allow/deny)
+- Private Endpoint for internal-only access
 
 ---
 
-## 🔥 Types of Alerts
+## 📦 Container Options (AZ-104 level)
 
-| Type | Use |
-|------|-----|
-| Metric Alert | CPU, memory |
-| Log Alert | KQL query |
+| Service | Best Use |
+|--------|---------|
+| Web App for Containers | Containerized web apps quickly |
+| Azure Container Instances (ACI) | Fast, simple container run |
+| AKS | Large-scale orchestration |
 
----
-
-## 🧠 Action Groups
-
-What happens when alert triggers:
-- Email
-- SMS
-- Webhook
+🔥 Exam tip: if the requirement is “quick container without orchestration,” choose ACI.
 
 ---
 
-## 🔥 EXAM FLOW
+## 🌍 App Networking Notes
 
-Condition → Alert → Action Group → Notification
-
----
-
-## 🔐 Azure Backup
-
-Used to:
-- Protect VMs
-- Restore data
-
----
-
-## 🧠 Recovery Services Vault
-
-Storage for backups
-
----
-
-## 🔥 EXAM KEY
-
-Backup ALWAYS requires:
-👉 Recovery Services Vault
-
----
-
-## 🔁 Backup Types
-
-- Full
-- Incremental (most common)
-
----
-
-## 🔥 Restore Options
-
-- Full VM restore
-- File-level restore
-
----
-
-## ⏳ Retention
-
-How long backups are kept
-
----
-
-## 🔥 EXAM TRICK
-
-Longer retention = higher cost
+- App Service can integrate with VNets (outbound scenarios)
+- Private Endpoint secures inbound access
+- DNS/private resolution may be required when using private access
 
 ---
 
@@ -187,274 +112,39 @@ Longer retention = higher cost
 ## 🎯 Scenario
 
 You will:
-- Monitor VM
-- Query logs
-- Create alerts
-- Configure backup
+- Deploy a web app
+- Create deployment slot
+- Test swap process
+- Deploy a simple containerized app
 
 ---
 
 ## 🔧 Portal Steps
 
-### 1. Create Log Analytics Workspace
-
-Name: law-day6
-
----
-
-### 2. Connect VM
-
-Enable:
-- Monitoring agent
-- Send logs to workspace
+### 1. Create App Service Plan
+Name: asp-day6
 
 ---
 
-### 3. Run KQL Query
-
-Example:
-
-Heartbeat  
-| take 10  
+### 2. Create Web App
+Name: app-day6
 
 ---
 
-### 4. Create Alert
-
-Condition:
-- CPU > 80%
+### 3. Add Deployment Slot
+Slot: staging
 
 ---
 
-### 5. Create Action Group
-
-- Email notification
-
----
-
-### 6. Trigger Alert
-
-Simulate CPU load
+### 4. Configure App Setting
+Add environment variable and validate in staging
 
 ---
 
-### 7. Create Recovery Services Vault
-
-Name: rsv-day6
-
----
-
-### 8. Enable Backup
-
-- Select VM
-- Configure policy
+### 5. Swap Slots
+Swap staging → production
 
 ---
 
-### 9. Run Backup
-
-Perform initial backup
-
----
-
-### 10. Test Restore
-
-File-level restore
-
----
-
-# 💻 CLI COMMANDS
-
-Create workspace:
-
-az monitor log-analytics workspace create \
-  --resource-group rg-day1-core \
-  --workspace-name law-day6
-
----
-
-Create alert:
-
-az monitor metrics alert create \
-  --name cpu-alert \
-  --resource-group rg-day1-core \
-  --scopes <VM_ID> \
-  --condition "avg Percentage CPU > 80"
-
----
-
-# 💻 PowerShell COMMANDS
-
-New-AzOperationalInsightsWorkspace `
-  -ResourceGroupName rg-day1-core `
-  -Name law-day6 `
-  -Location EastUS
-
----
-
-# 🔹 STEP 3 – EXAM TRAPS
-
-❌ Trap 1  
-Using Metrics when Logs needed  
-👉 Logs = detailed analysis
-
----
-
-❌ Trap 2  
-Forgetting Log Analytics  
-👉 Required for KQL
-
----
-
-❌ Trap 3  
-Alert without action group  
-👉 No notification
-
----
-
-❌ Trap 4  
-Backup without vault  
-👉 Not possible
-
----
-
-❌ Trap 5  
-Confusing Sentinel vs Monitor  
-👉 Sentinel = SIEM  
-👉 Monitor = core service
-
----
-
-❌ Trap 6  
-Retention ignored  
-👉 Impacts cost
-
----
-
-# 🔹 STEP 4 – PRACTICE QUESTIONS
-
-Q1  
-Where are logs stored?
-
-A. NSG  
-B. Log Analytics  
-C. VM  
-D. Disk  
-
-Answer: B
-
----
-
-Q2  
-Fast alert for CPU spike:
-
-A. Log alert  
-B. Metric alert  
-C. NSG  
-D. Policy  
-
-Answer: B
-
----
-
-Q3  
-Query logs:
-
-A. SQL  
-B. PowerShell  
-C. KQL  
-D. Bash  
-
-Answer: C
-
----
-
-Q4  
-Backup requires:
-
-A. NSG  
-B. Vault  
-C. Tag  
-D. Policy  
-
-Answer: B
-
----
-
-Q5  
-Detailed investigation:
-
-A. Metrics  
-B. Logs  
-C. NSG  
-D. Disk  
-
-Answer: B
-
----
-
-Q6  
-Send alert email:
-
-A. Action Group  
-B. Policy  
-C. RBAC  
-D. Tag  
-
-Answer: A
-
----
-
-Q7  
-Retention affects:
-
-A. Security  
-B. Cost  
-C. Network  
-D. DNS  
-
-Answer: B
-
----
-
-# 🧠 MUST MEMORIZE
-
-- Monitor = central  
-- Logs = Log Analytics  
-- Metrics = fast alerts  
-
-- Alert → Action Group  
-
-- Backup → Recovery Vault  
-
----
-
-# 🔁 Reinforcement
-
-Repeat:
-
-- Metrics vs Logs
-- Alert flow
-- Backup components
-
----
-
-# 🚨 Homework
-
-1. Create workspace
-2. Connect VM
-3. Run KQL query
-4. Create alert
-5. Configure backup
-6. Answer:
-
-👉 When do you use metrics vs logs?  
-👉 What component is REQUIRED for backup?
-
----
-
-# ⏭️ Next: Day 7 (Governance & Cost Management)
-
-- Azure Policy deep dive
-- Cost management
-- Resource organization strategies
+### 6. Deploy Container (Optional Advanced)
+Use ACI or Web App for Containers for a sample image
