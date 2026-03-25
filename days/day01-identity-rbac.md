@@ -177,6 +177,57 @@ RBAC = **Who can do what, where**
 | User Access Admin | Manage RBAC | No resource control |
 
 ---
+# RBAC SCOPE (CRITICAL)
+
+Management Group
+↓
+Subscription
+↓
+Resource Group
+↓
+Resource
+
+---
+
+## RULE
+
+Permissions FLOW DOWN
+
+---
+# BUILT-IN ROLES (FINAL)
+
+| Role | Can Manage Resources | Can Assign Roles | Use Case |
+|------|---------------------|------------------|----------|
+| Owner | ✅ | ✅ | Full admin |
+| Contributor | ✅ | ❌ | Admin without access control |
+| Reader | ❌ | ❌ | View only |
+| User Access Admin | ❌ | ✅ | Access control only |
+
+---
+
+# SPECIALIZED ROLES
+
+| Role | Purpose |
+|------|--------|
+| VM Contributor | Manage VMs only |
+| Backup Operator | Manage backups |
+| Security Reader | View security settings |
+
+---
+
+# 🔥 EXAM RULE
+
+If question says:
+
+"User should manage resources but NOT permissions"
+
+👉 Answer = **Contributor**
+---
+
+## EXAM TRAP
+
+Assign at higher scope → affects EVERYTHING below
+---
 
 ## ⚠️ RBAC Rules
 
