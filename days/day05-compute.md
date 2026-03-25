@@ -25,6 +25,14 @@ Microsoft tests:
 - Understand VM Scale Sets
 - Learn App Services basics
 
+
+
+## 📚 Microsoft Learn Links (Use with Each Section)
+
+- Create a Windows virtual machine in Azure module: https://learn.microsoft.com/en-us/training/modules/create-windows-virtual-machine-in-azure/
+- Configure and manage virtual networks for Azure administrators module: https://learn.microsoft.com/en-us/training/modules/configure-manage-virtual-networks-azure-admin/
+- Host a web application with Azure App Service module: https://learn.microsoft.com/en-us/training/modules/host-a-web-app-with-azure-app-service/
+
 ---
 
 # ⏱️ Time Plan

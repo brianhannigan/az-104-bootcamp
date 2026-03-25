@@ -24,6 +24,14 @@ Microsoft will test:
 - Understand Private Endpoints
 - Learn hybrid connectivity basics (VPN Gateway)
 
+
+
+## 📚 Microsoft Learn Links (Use with Each Section)
+
+- Azure virtual network peering: https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
+- Introduction to Azure routing preference module: https://learn.microsoft.com/en-us/training/modules/introduction-azure-routing-preference/
+- Azure private endpoint overview: https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview
+
 ---
 
 # ⏱️ Time Plan

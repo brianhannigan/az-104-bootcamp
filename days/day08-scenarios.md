@@ -25,6 +25,14 @@ They test:
 - Practice real exam-style scenarios
 - Reinforce critical concepts
 
+
+
+## 📚 Microsoft Learn Links (Use with Each Section)
+
+- AZ-104 exam prep collection: https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104
+- Build your Azure skills with Learn sandbox: https://learn.microsoft.com/en-us/training/support/faq?pivots=sandbox
+- Azure architecture center: https://learn.microsoft.com/en-us/azure/architecture/
+
 ---
 
 # ⏱️ Time Plan

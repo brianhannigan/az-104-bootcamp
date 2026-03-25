@@ -23,6 +23,14 @@ AZ-104 tests:
 - Understand Azure Backup + Recovery Services Vault
 - Learn Azure Site Recovery (ASR), RPO, and RTO
 
+
+
+## 📚 Microsoft Learn Links (Use with Each Section)
+
+- Analyze infrastructure with Azure Monitor metrics and logs module: https://learn.microsoft.com/en-us/training/modules/analyze-infrastructure-with-azure-monitor-metrics-and-logs/
+- Configure monitoring for virtual machines module: https://learn.microsoft.com/en-us/training/modules/configure-monitoring-for-virtual-machines/
+- Protect your virtual machines by using Azure Backup module: https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/
+
 ---
 
 # ⏱️ Time Plan

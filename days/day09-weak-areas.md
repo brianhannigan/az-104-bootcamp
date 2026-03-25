@@ -23,6 +23,14 @@ Today you:
 - Identify weak domains
 - Reinforce critical concepts
 
+
+
+## 📚 Microsoft Learn Links (Use with Each Section)
+
+- AZ-104 exam skills outline: https://learn.microsoft.com/en-us/credentials/certifications/exams/az-104/
+- Microsoft Learn training for Azure administrators: https://learn.microsoft.com/en-us/training/paths/az-104-administrator-prerequisites/
+- Practice assessment for Azure Administrator: https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/
+
 ---
 
 # ⏱️ Time Plan

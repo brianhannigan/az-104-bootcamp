@@ -25,6 +25,14 @@ It shows up in:
 - Learn Azure DNS basics
 - Control traffic flow and troubleshoot connectivity
 
+
+
+## 📚 Microsoft Learn Links (Use with Each Section)
+
+- Azure networking services overview: https://learn.microsoft.com/en-us/azure/networking/fundamentals/networking-overview
+- Introduction to Azure virtual networks module: https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-virtual-networks/
+- Introduction to network security groups module: https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-security-groups/
+
 ---
 
 # ⏱️ Time Plan

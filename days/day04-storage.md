@@ -24,6 +24,14 @@ Microsoft tests:
 - Understand lifecycle management
 - Learn access tiers (Hot, Cool, Archive)
 
+
+
+## 📚 Microsoft Learn Links (Use with Each Section)
+
+- Azure Storage overview: https://learn.microsoft.com/en-us/azure/storage/common/storage-introduction
+- Configure Azure Blob Storage module: https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/
+- Configure Azure Files and Azure File Sync module: https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/
+
 ---
 
 # ⏱️ Time Plan
