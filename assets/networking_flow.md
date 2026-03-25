@@ -1,13 +1,15 @@
 # Azure Networking Flow
 
+![Animated Azure networking traffic flow and controls](./networking_flow.svg)
+
 Internet  
-â†“  
+↓  
 Public IP  
-â†“  
+↓  
 Load Balancer or Application Gateway  
-â†“  
+↓  
 Subnet  
-â†“  
+↓  
 VM or App
 
 ## Core Controls
