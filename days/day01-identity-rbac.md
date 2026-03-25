@@ -235,7 +235,32 @@ If you see:
 👉 It is ALWAYS:
 **Contributor**
 ---
+# DATA ACTIONS (ADVANCED)
 
+| Type | Meaning |
+|------|--------|
+| Actions | Control plane (manage resources) |
+| DataActions | Data plane (actual data access) |
+
+---
+
+## Example
+
+Storage Account:
+
+- RBAC → can access resource
+- DataActions → can read blobs
+
+---
+
+# EXAM TIP
+
+If question involves:
+"Access to data inside resource"
+
+👉 Think:
+**DataActions**
+---
 ## 🛑 Locks
 
 📘 Microsoft Learn: https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources
