@@ -149,6 +149,30 @@ Know:
 
 ---
 
+# Azure AD Quick Add
+
+## Azure AD Join Types
+
+| Type | Description |
+|------|------------|
+| Azure AD Join | Cloud-only devices |
+| Hybrid Join | On-prem + Azure |
+| Registered | Personal devices |
+
+---
+
+## SSPR
+
+- Allows users to reset password without admin
+- Requires authentication methods configured
+
+---
+
+## Guest Users
+
+- External users (B2B)
+- Limited access
+
 # 🔹 STEP 2 – HANDS-ON LAB
 
 ## 🎯 Scenario
