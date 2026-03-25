@@ -33,7 +33,7 @@ You already have:
 
 ## 📚 Microsoft Learn Links (Use with Each Section)
 
-- Identity + Governance learning path (AZ-104 aligned): https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance-administer-azure/
+- Identity + Governance learning path (AZ-104 aligned): https://learn.microsoft.com/en-us/training/paths/preparing-for-az-104-manage-azure-identities-and-governance-1-of-5/
 - Azure RBAC module (hands-on): https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/
 - Azure Policy module: https://learn.microsoft.com/en-us/training/modules/intro-to-azure-policy/
 
