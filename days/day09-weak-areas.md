@@ -41,9 +41,17 @@ Today you:
 | Review Weak Areas | 2–3 hrs |
 | Reinforcement Labs | 2 hrs |
 
+## ⏲️ Day Timer
+
+| Timer | Target |
+|---|---|
+| Total Day Timer | 8h 00m |
+
 ---
 
 # 🔹 STEP 1 – FULL MOCK EXAM
+
+**⏲️ Session Timer:** 2h 00m
 
 ## 🧠 Rules
 
@@ -189,6 +197,8 @@ Answer: C
 
 # 🔹 STEP 2 – WEAK AREA IDENTIFICATION
 
+**⏲️ Session Timer:** 45m
+
 ## 🧠 Track Mistakes
 
 Group by domain:
@@ -214,6 +224,8 @@ Group by domain:
 ---
 
 # 🔹 STEP 3 – RAPID REINFORCEMENT
+
+**⏲️ Session Timer:** 1h 00m
 
 ## 🔐 Identity Fix
 
@@ -262,6 +274,8 @@ Group by domain:
 
 # 🔹 STEP 4 – MINI LAB (FINAL TEST)
 
+**⏲️ Session Timer:** 1h 30m
+
 ## 🎯 Build This FAST
 
 You must create:
@@ -282,6 +296,8 @@ Complete in **under 45 minutes**
 ---
 
 # 🔹 STEP 5 – EXAM STRATEGY
+
+**⏲️ Session Timer:** 45m
 
 ## 🧠 Question Strategy
 
@@ -321,6 +337,8 @@ Remove:
 ---
 
 # 🔹 STEP 6 – FINAL PRACTICE QUESTIONS
+
+**⏲️ Session Timer:** 2h 00m
 
 Q1  
 Enforce compliance automatically:

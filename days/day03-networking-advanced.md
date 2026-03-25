@@ -42,9 +42,17 @@ Microsoft will test:
 | Hands-on Labs | 3–4 hrs |
 | Practice + Review | 1–2 hrs |
 
+## ⏲️ Day Timer
+
+| Timer | Target |
+|---|---|
+| Total Day Timer | 8h 15m |
+
 ---
 
 # 🔹 STEP 1 – TEACH (Exam-Focused)
+
+**⏲️ Session Timer:** 2h 30m
 
 ## 🔗 VNet Peering
 
@@ -220,6 +228,8 @@ Used for:
 
 # 🔹 STEP 2 – HANDS-ON LAB
 
+**⏲️ Session Timer:** 3h 15m
+
 ## 🎯 Scenario
 
 You will:
@@ -370,6 +380,8 @@ New-AzRouteTable `
 
 # 🔹 STEP 3 – EXAM TRAPS
 
+**⏲️ Session Timer:** 45m
+
 ❌ Trap 1  
 Peering assumed transitive  
 👉 It is NOT
@@ -401,6 +413,8 @@ Routing ignored
 ---
 
 # 🔹 STEP 4 – PRACTICE QUESTIONS
+
+**⏲️ Session Timer:** 1h 45m
 
 Q1  
 Peering allows:

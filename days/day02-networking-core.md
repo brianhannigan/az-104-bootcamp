@@ -43,9 +43,17 @@ It shows up in:
 | Hands-on Labs | 3–4 hrs |
 | Practice + Review | 1–2 hrs |
 
+## ⏲️ Day Timer
+
+| Timer | Target |
+|---|---|
+| Total Day Timer | 8h 00m |
+
 ---
 
 # 🔹 STEP 1 – TEACH (Exam-Focused)
+
+**⏲️ Session Timer:** 2h 15m
 
 ## 🧩 Core Networking Model
 
@@ -174,6 +182,8 @@ If DNS is wrong → connectivity fails even if network is fine
 ---
 
 # 🔹 STEP 2 – HANDS-ON LAB
+
+**⏲️ Session Timer:** 3h 15m
 
 ## 🎯 Scenario
 
@@ -310,6 +320,8 @@ New-AzNetworkSecurityGroup `
 
 # 🔹 STEP 3 – EXAM TRAPS
 
+**⏲️ Session Timer:** 45m
+
 ❌ Trap 1  
 NSG rule priority misunderstood  
 👉 Lower number = higher priority
@@ -342,6 +354,8 @@ Traffic allowed on NIC but blocked on subnet
 ---
 
 # 🔹 STEP 4 – PRACTICE QUESTIONS
+
+**⏲️ Session Timer:** 1h 45m
 
 Q1  
 What does an NSG control?

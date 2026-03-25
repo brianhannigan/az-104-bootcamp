@@ -43,9 +43,17 @@ Microsoft tests:
 | Hands-on Labs | 3–4 hrs |
 | Practice + Review | 1–2 hrs |
 
+## ⏲️ Day Timer
+
+| Timer | Target |
+|---|---|
+| Total Day Timer | 8h 00m |
+
 ---
 
 # 🔹 STEP 1 – TEACH (Exam-Focused)
+
+**⏲️ Session Timer:** 2h 15m
 
 ## 🖥️ Virtual Machines (VMs)
 
@@ -199,6 +207,8 @@ Multiple apps can share ONE App Service Plan
 
 # 🔹 STEP 2 – HANDS-ON LAB
 
+**⏲️ Session Timer:** 3h 00m
+
 ## 🎯 Scenario
 
 You will:
@@ -307,6 +317,8 @@ New-AzVM `
 
 # 🔹 STEP 3 – EXAM TRAPS
 
+**⏲️ Session Timer:** 1h 00m
+
 ❌ Trap 1  
 Using VM when App Service is better  
 👉 Use App Service for web apps
@@ -339,6 +351,8 @@ Over-sizing VM
 ---
 
 # 🔹 STEP 4 – PRACTICE QUESTIONS
+
+**⏲️ Session Timer:** 1h 45m
 
 Q1  
 Need full OS control:
