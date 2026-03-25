@@ -767,6 +767,151 @@ D. UDR
 ✅ **Answer: B – Conditional Access**
 
 ---
+# AZ-104 IDENTITY LICENSE CHEAT SHEET (FINAL – VERIFIED)
+
+---
+
+# 🔑 LICENSE TIERS
+
+| Tier | Purpose |
+|------|--------|
+| Free | Core identity + RBAC |
+| P1 | Conditional Access + advanced identity |
+| P2 | Risk + privileged identity |
+
+---
+
+# 🧩 FEATURE → LICENSE MAP (EXAM-CRITICAL)
+
+| Feature | Free | P1 | P2 | Notes |
+|--------|------|----|----|------|
+| SSO | ✅ | ✅ | ✅ | Always available |
+| Cloud/Federated Auth | ✅ | ✅ | ✅ | Core feature |
+| RBAC | ✅ | ✅ | ✅ | Always free |
+| MFA (basic) | ✅ | ✅ | ✅ | Per-user MFA |
+| Conditional Access | ❌ | ✅ | ✅ | LOCATION / DEVICE rules |
+| Risk-based CA | ❌ | ❌ | ✅ | User risk / sign-in risk |
+| SSPR (basic) | ⚠️ Limited | ✅ | ✅ | Full features need P1 |
+| Dynamic Groups | ❌ | ✅ | ✅ | Very testable |
+| Administrative Units | ❌ | ✅ | ✅ | Scoped admin |
+| App Provisioning | ❌ | ✅ | ✅ | SCIM sync |
+| Managed Identity | ✅ | ✅ | ✅ | Azure resource feature |
+| Guest Users (B2B) | ✅ | ✅ | ✅ | Basic free |
+| PIM | ❌ | ❌ | ✅ | JUST-IN-TIME access |
+| Identity Protection | ❌ | ❌ | ✅ | Risk engine |
+
+---
+
+# 🔥 MOST TESTED LICENSE RULES
+
+## RULE 1
+“Conditional Access”
+👉 ALWAYS = **P1 or higher**
+
+---
+
+## RULE 2
+“Risk-based decisions”
+👉 ALWAYS = **P2**
+
+---
+
+## RULE 3
+“Just-in-time admin”
+👉 ALWAYS = **P2 (PIM)**
+
+---
+
+## RULE 4
+“Basic MFA”
+👉 FREE
+
+BUT…
+
+“Smart MFA (location/device/risk)”
+👉 P1 or P2
+
+---
+
+## RULE 5
+“Dynamic group membership”
+👉 P1
+
+---
+
+## RULE 6
+“Scoped admin (regional control)”
+👉 Administrative Units → P1
+
+---
+
+# 🚨 EXAM TRAPS (VERY IMPORTANT)
+
+---
+
+### Trap 1
+“Require MFA”
+
+👉 Could be:
+- Free (basic)
+- OR P1 (if conditional)
+
+---
+
+### Trap 2
+“Require MFA when outside network”
+
+👉 Conditional Access → **P1**
+
+---
+
+### Trap 3
+“Block risky users”
+
+👉 Identity Protection → **P2**
+
+---
+
+### Trap 4
+“Temporary admin access”
+
+👉 PIM → **P2**
+
+---
+
+### Trap 5
+“Users reset password”
+
+👉 Assume → **P1**
+
+---
+
+# 🧠 MEMORY LOCK
+
+Say this:
+
+- Free = identity basics  
+- P1 = Conditional Access  
+- P2 = Risk + Privileged  
+
+---
+
+# 🎯 FINAL EXAM STRATEGY
+
+If you see:
+
+| Keyword | Answer |
+|--------|--------|
+| Location-based access | P1 |
+| Device-based access | P1 |
+| Risk-based access | P2 |
+| Temporary admin | P2 |
+| Basic MFA | Free |
+
+---
+
+# 🏁 YOU ARE NOW LICENSE-READY
+---
 
 # 🔹 STEP 3 – EXAM TRAPS
 
