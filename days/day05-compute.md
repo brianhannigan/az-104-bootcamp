@@ -299,6 +299,51 @@ You will:
 
 ## 🔧 Portal Steps
 
+### 🎬 Demo: Create and Configure a Virtual Machine
+
+For this demonstration, start from a **completely blank state** inside a resource group:
+
+1. In the resource group, select **Create**.
+2. Search for **Virtual machine**, then select **Create** again.
+3. In the configuration screen, focus on the core settings first (then review advanced options for exam prep):
+   - **VM name**
+   - **Region**
+   - **Availability options** (for this demo: **No infrastructure redundancy required**)
+   - **Image** (example: **Windows Server** image from Azure Marketplace)
+   - **Size** (remember: size affects both performance and price)
+   - **Administrator username/password**
+4. Select **Next: Disks**:
+   - Configure disk size and disk type.
+   - Compare cost/performance tiers (for example, Premium SSD vs Standard SSD).
+   - Add a data disk using **Create and attach a new disk** (example: 1 TB Premium SSD).
+5. Select **Next: Networking**:
+   - In a blank environment, create a new **VNet** and **subnet**.
+   - Keep defaults where appropriate.
+   - Create a new **Public IP** using **Create new** and assign a name.
+6. Select **Review + create**, then **Create**.
+7. Wait for deployment to complete (provisioning time varies by selected configuration).
+8. Select **Go to resource**.
+9. Confirm VM is in **Running** state and note the public IP address.
+10. Test connectivity:
+    - Select **Connect** and choose the first connection option.
+    - From a Windows machine, use **RDP**.
+    - Select **Download RDP file**, launch it, approve prompts, and sign in with your admin password.
+
+✅ This gives you the baseline portal workflow for VM deployment and first access.
+
+### 🧠 Demo Key Takeaways
+
+- VM creation is a sequence of foundational decisions, starting with naming, region, image, and size.
+- VM size and disk type have major impact on performance and monthly cost.
+- Disk planning includes both OS disk and optional data disks.
+- Networking dependencies (VNet, subnet, public IP, NSG behavior) are critical to successful access.
+- Provisioning time should always be considered when planning operations.
+- After deployment, validate runtime state and access path immediately (for Windows: RDP).
+
+For stronger exam and real-world readiness, practice the same deployment via both the **Azure portal** and **CLI/PowerShell**, and explore advanced settings beyond the minimum flow.
+
+---
+
 ### 1. Create VM
 
 Name: vm-day5  
