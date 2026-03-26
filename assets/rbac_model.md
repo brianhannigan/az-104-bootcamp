@@ -2,14 +2,6 @@
 
 ![Animated RBAC inheritance and scope model](./rbac_model.svg)
 
-Management Group  
-↓  
-Subscription  
-↓  
-Resource Group  
-↓  
-Resource
-
 ## Rules
 
 - Permissions flow downward.
