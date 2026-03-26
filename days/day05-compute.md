@@ -420,6 +420,61 @@ For stronger exam and real-world readiness, practice the same deployment via bot
 
 ---
 
+### 🎬 Demo: Configure Azure Disk Encryption
+
+For this new demonstration, we start from the previous one with our newly created and operational virtual machine, and we configure **Azure Disk Encryption (ADE)** to enable **BitLocker** disk encryption.
+
+1. In the VM left menu, go to **Settings > Disks**.
+2. Review available disks:
+   - The **system disk**
+   - The **data disk** added earlier
+3. In the **Encryption** column, note that encryption is already enabled by default.
+   - This is **Server-Side Encryption (SSE)** managed by Microsoft.
+   - It is different from **Azure Disk Encryption (ADE)**, which is not enabled by default and uses BitLocker at the OS layer.
+4. Select **Additional settings**.
+5. In **Encryption settings**, choose to encrypt **all OS and data disks**.
+6. Scroll down and create a **Key Vault** to store the BitLocker key:
+   - Select **Create new**
+   - Enter a Key Vault name
+   - Select **Next**
+7. In **Access configuration**, enable Azure Disk Encryption for volume encryption so the vault can be used by Microsoft services for ADE.
+8. Select **Review + create**, then **Create**.
+9. Return to ADE settings and create a key:
+   - Select **Create new**
+   - Provide a key name
+   - Select key size (for compatibility, use **4096-bit / 4K**)
+   - Select **Create**
+10. Select **Save**.
+11. Once completed, select **Go to resource**.
+12. Confirm in the top-right notifications that the VM extension provisioning state is **Succeeded**.
+
+To validate inside the VM:
+
+1. Reconnect to the VM using **RDP**.
+2. Open **PowerShell**.
+3. Run:
+   - `manage-bde -status C:`
+4. Confirm:
+   - **Percentage Encrypted: 100%**
+   - **Protection Status: Protection On**
+
+✅ This confirms Azure Disk Encryption has been successfully enabled on the virtual machine.
+
+### 🧠 Demo Key Takeaways
+
+Azure Disk Encryption (ADE) adds an additional protection layer on top of default Server-Side Encryption (SSE). While SSE is automatically enabled and uses Microsoft-managed keys, ADE enables OS-level encryption with BitLocker (Windows), helping satisfy stricter compliance and security requirements.
+
+- Start by checking current disk encryption state in VM disk settings.
+- Understand the distinction between **SSE (platform/storage layer)** and **ADE (guest OS layer)**.
+- Enable ADE from VM disk settings and choose to encrypt OS and data disks.
+- Use Azure Key Vault to store/manage encryption keys and configure required access.
+- Monitor deployment through VM extension provisioning status.
+- Validate encryption from inside the VM with `manage-bde -status`.
+
+The key objective is understanding both the **why** (compliance/security control) and the **how** (configuration + validation workflow) for Azure Disk Encryption.
+
+---
+
 ### 1. Create VM
 
 Name: vm-day5  
