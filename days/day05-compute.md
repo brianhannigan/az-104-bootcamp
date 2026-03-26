@@ -182,13 +182,89 @@ Choose based on:
 | Standard HDD | Cheap, slow |
 | Standard SSD | Balanced |
 | Premium SSD | High performance |
+| Ultra Disk | Extreme performance for specialized workloads |
+
+### 🧠 Choosing the Right Disk Tier
+
+Imagine you deploy a VM for a production database. At first, performance is fine. As traffic grows, disk throughput and latency can become the bottleneck. Requests queue up, and application responsiveness drops.
+
+👉 Disk selection is a major architecture decision. You must balance:
+- Performance (IOPS/throughput/latency)
+- Cost
+- Reliability requirements
+
+**Quick guidance:**
+- **Standard HDD** → development/testing, infrequent access, lowest cost
+- **Standard SSD** → general-purpose/default choice, good price/performance
+- **Premium SSD** → production databases and latency-sensitive workloads
+- **Ultra Disk** → very demanding workloads requiring extremely high throughput and consistently low latency
+
+### ✅ Scenario Mapping
+
+- Small development server or test app → **Standard HDD**
+- Moderate-traffic web app (for example, listings + inquiry form workflows) → **Standard SSD**
+- Mission-critical database, analytics platform, or heavy social platform workload → **Premium SSD** or **Ultra Disk**
 
 ---
 
-## 🔐 Disk Encryption
+## Managing VM Disks and Disk Encryption
 
-- Azure Disk Encryption (ADE)
-- Commonly integrates with Azure Key Vault for key management
+Azure managed disks are critical for both VM performance and cost management.
+
+### Core Disk Concepts
+
+- Every VM gets an **OS disk** by default (commonly around **127 GiB**, but image defaults can vary).
+- You can attach **data disks** for databases, logs, backups, and application data.
+- You can mix disk types in one VM (for example: Premium SSD for database files + Standard SSD for logs/backups).
+- VM SKU limits still apply for:
+  - Supported disk types
+  - Max throughput and IOPS
+  - Maximum number of attached disks (many VM sizes support up to 64 data disks)
+
+### Temporary Disk (Important)
+
+- Many VM sizes include temporary local storage with very fast I/O.
+- Temporary disk data is **not persistent** and can be lost on reboot, stop/deallocate, host servicing, or redeployment.
+- Use only for cache/scratch/ephemeral files, never for critical data.
+
+### Attaching and Initializing Data Disks
+
+From the Azure portal:
+1. Open the VM and go to **Disks**.
+2. Select **Add data disk**.
+3. Choose an existing managed disk or create a new one.
+4. Set disk name, type, and size.
+
+Inside the guest OS:
+- **Windows:** initialize and format in Disk Management, then assign a drive letter.
+- **Linux:** use tools such as `lsblk`, create filesystem if needed, then mount.
+
+### Encryption Options
+
+- **Server-Side Encryption (SSE):** enabled by default on all managed disks using Microsoft-managed keys.
+- **Customer-Managed Keys (CMK):** store keys in Azure Key Vault for additional governance (rotation, auditing, and revocation control).
+- **Double encryption:** available for stricter compliance scenarios using both platform and customer key layers.
+- **Azure Disk Encryption (ADE):** OS-level encryption (BitLocker on Windows / dm-crypt on Linux). Useful legacy knowledge, but planned retirement is **September 2028**, so migration planning is important.
+
+---
+
+## 📝 Exam Tips (Disk-Focused)
+
+- Every VM has an OS disk; put databases/logs/app data on separate data disks when possible.
+- Disk performance is constrained by both disk tier **and** VM size/SKU limits.
+- Some high-performance VM SKUs require Premium SSD (or higher-compatible) OS disks.
+- Temporary disks are never for persistent/critical data.
+- SSE is default baseline encryption; use CMK when governance/compliance requires key ownership and tighter controls.
+- ADE is older OS-level encryption and should be recognized as legacy compared with modern SSE + CMK patterns.
+
+---
+
+## 📚 Additional Resources
+
+- Introduction to Azure managed disks: https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview
+- Azure managed disk types: https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types
+- Understand Azure Disk Storage billing: https://learn.microsoft.com/en-us/azure/virtual-machines/disks-understand-billing
+- Overview of managed disk encryption options: https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview
 
 ---
 
