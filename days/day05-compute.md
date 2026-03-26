@@ -475,6 +475,82 @@ The key objective is understanding both the **why** (compliance/security control
 
 ---
 
+## 🧪 Exercise: Deploy and Manage a Secure VM
+
+### Lesson
+
+### Downloads
+
+### Cloud Resources
+
+### Introduction
+
+Virtual Machines are one of the most common compute resources in Azure. However, if not deployed securely, they can become easy targets for attacks. In this exercise, you will learn how to deploy a Virtual Machine (VM) with secure access and proper configuration to ensure compliance and protection.
+
+### Learning Objectives
+
+By the end of this exercise, you will be able to:
+
+- Deploy a VM using Azure Portal.
+- Configure secure access with SSH keys.
+- Apply a Network Security Group (NSG) to restrict traffic.
+
+### Instructions
+
+1. Open the Azure portal and navigate to **Virtual Machines**.
+2. Select **Create** to create a new Virtual machine using the following details:
+
+#### Basics tab
+
+- Select an existing **Resource group** (or create a new one).
+- Give your new VM a **Virtual machine name**.
+- Choose the **Region** closest to you.
+- For **Availability options**, select **No infrastructure redundancy required**.
+- For **Security type**, select **Trusted launch virtual machines**.
+- Select **Ubuntu Server 24.04 LTS - x64 Gen2** as the image for the VM operating system. The available choices will change depending on the Security Type selected.
+- For **Size**, click **See all sizes** and select **Standard_B1s - 1 vcpu, 1 GiB memory**.
+- For **SSH public key source**, select **Generate new key pair**. Azure will create a new RSA key and prompt you to download the private key for later access. Save it in a secure location to use during SSH login.
+- Select **RSA SSH Format** as SSH Key Type.
+- Give a name for the SSH public key for the **Key pair name**. You may leave it as the default.
+- For **Public inbound ports**, select **None**. Do **NOT** keep the default selection of **Allow selected ports**.
+
+#### Networking tab
+
+- Create a new Virtual network using the default values for it and the Subnet.
+- Set **Public IP** to **None**. This will not expose the machine to the internet.
+- Select **Delete NIC when the VM is deleted**.
+
+#### Management tab
+
+- Under **Identity**, select **Enable system-assigned managed identity**.
+
+3. Select **Review + create**, then **Create** to create the VM.
+4. When prompted, select **Download private key and create resource**.
+
+### Availability
+
+#### Question 1 of 3
+
+When deploying a secure Virtual Machine in Azure, we chose not to assign a public IP address. Why is this considered a best practice?
+
+#### Question 2 of 3
+
+Match each Azure VM Security Type with its correct description.
+
+These are the correct matches.
+
+| Security Type | Description |
+|---|---|
+| Standard | Basic security features without additional hardware-based protections. |
+| Trusted launch virtual machines | Provides advanced hardware-based security features such as Secure Boot and virtual TPM to protect against rootkits and bootkits. |
+| Confidential virtual machines | Protects sensitive data in memory with encryption, ensuring that even Azure administrator cannot access it. |
+
+#### Question 3 of 3
+
+You deployed a Virtual Machine in Azure without a public IP address. Which of the following are valid ways to securely log into the VM? Select all that apply.
+
+---
+
 ### 1. Create VM
 
 Name: vm-day5  
