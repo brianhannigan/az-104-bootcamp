@@ -10,7 +10,7 @@ This repository is a focused, exam-driven AZ-104 training system designed for ra
 - [Daily Structure](#daily-structure)
 - [High-Priority Exam Areas](#high-priority-exam-areas)
 - [Recommended Use](#recommended-use)
-- [Example Company: CyberRange](#analysis-cyberrange.md)
+- [Example Company: CyberRange](#examples/cyberrange/analysis-cyberrange.md)
 
 ## Goals
 
