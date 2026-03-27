@@ -70,6 +70,14 @@ This repository is a focused, exam-driven AZ-104 training system designed for ra
 
 Use this section as a quick reference to official Microsoft documentation by exam objective.
 
+### Appendix Quick Navigation
+
+- [Manage Azure identities and governance (15–20%)](#manage-azure-identities-and-governance-1520)
+- [Implement and manage storage (10–15%)](#implement-and-manage-storage-1015)
+- [Deploy and manage Azure compute resources (25–30%)](#deploy-and-manage-azure-compute-resources-2530)
+- [Configure and manage virtual networking (30–35%)](#configure-and-manage-virtual-networking-3035)
+- [Monitor and back up Azure resources (10–15%)](#monitor-and-back-up-azure-resources-1015)
+
 ### Manage Azure identities and governance (15–20%)
 
 #### Manage Azure AD objects
