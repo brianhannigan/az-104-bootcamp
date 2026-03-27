@@ -72,13 +72,13 @@ Use this section as a quick reference to official Microsoft documentation by exa
 
 ### Appendix Quick Navigation
 
-- [Manage Azure identities and governance (15–20%)](#manage-azure-identities-and-governance-1520)
-- [Implement and manage storage (10–15%)](#implement-and-manage-storage-1015)
-- [Deploy and manage Azure compute resources (25–30%)](#deploy-and-manage-azure-compute-resources-2530)
-- [Configure and manage virtual networking (30–35%)](#configure-and-manage-virtual-networking-3035)
-- [Monitor and back up Azure resources (10–15%)](#monitor-and-back-up-azure-resources-1015)
+- [Manage Azure identities and governance (20–25%)](#manage-azure-identities-and-governance-2025)
+- [Implement and manage storage (15–20%)](#implement-and-manage-storage-1520)
+- [Deploy and manage Azure compute resources (20–25%)](#deploy-and-manage-azure-compute-resources-2025)
+- [Implement and manage virtual networking (15–20%)](#implement-and-manage-virtual-networking-1520)
+- [Monitor and maintain Azure resources (10–15%)](#monitor-and-maintain-azure-resources-1015)
 
-### Manage Azure identities and governance (15–20%)
+### Manage Azure identities and governance (20–25%)
 
 #### Manage Azure AD objects
 - https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-users-azure-active-directory
@@ -107,7 +107,7 @@ Use this section as a quick reference to official Microsoft documentation by exa
 - https://docs.microsoft.com/en-us/azure/cost-management-billing/cost-management-billing-overview
 - https://docs.microsoft.com/en-us/azure/governance/management-groups/manage
 
-### Implement and manage storage (10–15%)
+### Implement and manage storage (15–20%)
 
 #### Manage storage accounts
 - https://docs.microsoft.com/en-us/azure/storage/common/storage-network-security
@@ -129,7 +129,7 @@ Use this section as a quick reference to official Microsoft documentation by exa
 - https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction
 - https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-performance-tiers
 
-### Deploy and manage Azure compute resources (25–30%)
+### Deploy and manage Azure compute resources (20–25%)
 
 #### Configure VMs for high availability and scalability
 - https://docs.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-availability-sets
@@ -157,9 +157,9 @@ Use this section as a quick reference to official Microsoft documentation by exa
 - https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans
 - Reminder: focus on Web Apps only (not Functions).
 
-### Configure and manage virtual networking (30–35%)
+### Implement and manage virtual networking (15–20%)
 
-#### Implement and manage virtual networking
+#### Configure and manage virtual networks in Azure
 - https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview
 - https://docs.microsoft.com/en-us/azure/virtual-network/quick-create-portal
 - https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-filter-network-traffic
@@ -194,7 +194,7 @@ Use this section as a quick reference to official Microsoft documentation by exa
 - https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-troubleshoot
 - https://docs.microsoft.com/en-us/azure/virtual-wan/work-remotely-support
 
-### Monitor and back up Azure resources (10–15%)
+### Monitor and maintain Azure resources (10–15%)
 
 #### Monitor resources by using Azure Monitor
 - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-platform-metrics
