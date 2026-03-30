@@ -10,6 +10,7 @@ This repository is a focused, exam-driven AZ-104 training system designed for ra
 - [Daily Structure](#daily-structure)
 - [High-Priority Exam Areas](#high-priority-exam-areas)
 - [Recommended Use](#recommended-use)
+- [Key Answer Drill Sheet](exams/key-answer-drill.md)
 - [Example Company: CyberRange](examples/cyberrange/rbac-analysis.md)
 - [Appendix: AZ-104 Objective-to-Docs Map](#appendix-az-104-objective-to-docs-map)
 
@@ -65,6 +66,7 @@ This repository is a focused, exam-driven AZ-104 training system designed for ra
 3. Rebuild important tasks from memory.
 4. Review mistakes every day.
 5. Use the mock exam on Day 10 under timed conditions.
+6. Use the [Key Answer Drill Sheet](exams/key-answer-drill.md) for fast last-minute review.
 
 ## Appendix: AZ-104 Objective-to-Docs Map
 
