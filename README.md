@@ -26,7 +26,7 @@ This repository is a focused, exam-driven AZ-104 training system designed for ra
 |---|---|---|
 | `days/` | Daily training plans | [Day 1](days/day01-identity-rbac.md), [Day 2](days/day02-networking-core.md), [Day 3](days/day03-networking-advanced.md), [Day 4](days/day04-storage.md), [Day 5](days/day05-compute.md), [Day 6](days/day06-appservices-containers.md), [Day 7](days/day07-monitoring-backup.md), [Day 8](days/day08-scenarios.md), [Day 9](days/day09-weak-areas.md), [Day 10](days/day10-final-review.md) |
 | `assets/` | Diagrams and mental models | [Architecture Overview](assets/architecture_overview.md), [Networking Flow](assets/networking_flow.md), [RBAC Model](assets/rbac_model.md), [Exam Strategy](assets/exam_strategy.md) |
-| `exams/` | Cheat sheets, gotchas, and mock exam | [Cheat Sheet](exams/cheat-sheet.md), [Exam Gotchas](exams/exam-gotchas.md), [Full Mock Exam](exams/full-mock-exam.md) |
+| `exams/` | Cheat sheets, gotchas, and mock exam | [Cheat Sheet](exams/cheat-sheet.md), [Exam Gotchas](exams/exam-gotchas.md), [Full Mock Exam](exams/full-mock-exam.md), [Key Answer Drill Sheet](exams/key-answer-drill.md) |
 | `scripts/` | Helper scripts for repo setup or labs | [Scripts README](scripts/README.md) |
 
 ## 10-Day Study Flow
